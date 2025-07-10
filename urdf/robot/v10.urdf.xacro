@@ -8,7 +8,7 @@
     argument arm_type is no longer supported and will be removed in the future.
     This argument is ignored.
   -->
-    
+
   <xacro:arg name="arm_type" default="v10" />
   <xacro:arg name="body_type" default="v10" />
   <xacro:arg name="ee_type" default="openarm_hand" />
@@ -22,7 +22,7 @@
   <xacro:if value="$(eval ee_type == 'none')">
     <xacro:property name="hand" value="false"/>
   </xacro:if>
-  
+
   <!-- If `gazebo` arg is set, to which frame shall $(arm_type)_link0 be parented. Empty string for not fixing at all -->
   <xacro:arg name="parent" default="world" />
   <!-- If `gazebo` arg is set and `parent` not empty, what position offset between `parent` & $(arm_type)_link0 -->
@@ -33,7 +33,7 @@
   <!-- Is the robot being controlled with ros2_control?" -->
   <xacro:arg name="ros2_control" default="false" />
   <!-- IP address or hostname of the robot" -->
-  <xacro:arg name="can" default="can0" />
+  <xacro:arg name="can_interface" default="can0" />
   <!-- Should a fake hardware be used? -->
   <xacro:arg name="use_fake_hardware" default="false" />
   <!-- Should fake sensors be used? -->
@@ -66,7 +66,7 @@
   hand="$(arg hand)"
   ee_type="$(arg ee_type)"
   ros2_control="$(arg ros2_control)"
-  can="$(arg can)"
+  can_interface="$(arg can_interface)"
   use_fake_hardware="$(arg use_fake_hardware)"
   fake_sensor_commands="$(arg fake_sensor_commands)"
   no_prefix="$(arg no_prefix)"
@@ -74,12 +74,12 @@
   body_prefix=""
   arm_connected_to="base"
   body_connected_to="world"
-  bimanual="$(arg bimanual)" 
+  bimanual="$(arg bimanual)"
   right_arm_base_xyz="$(arg right_arm_base_xyz)"
   left_arm_base_xyz="$(arg left_arm_base_xyz)"
   right_arm_base_rpy="$(arg right_arm_base_rpy)"
   left_arm_base_rpy="$(arg left_arm_base_rpy)"
   />
 
-  
+
 </robot>
