@@ -1,8 +1,17 @@
+# hand:
+#   kinematic:
+#     x: 0.0
+#     y: -0.0205
+#     z: -0.5585
+#     roll: 0.0
+#     pitch: 0.0
+#     yaw: 0.0
+
 hand:
   kinematic:
     x: 0.0
-    y: -0.0205
-    z: -0.5585
+    y: 0.005
+    z: -0.6585
     roll: 0.0
     pitch: 0.0
     yaw: 0.0
