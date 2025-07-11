@@ -3,21 +3,27 @@
 
 
   <xacro:macro name="ee-inertials" params="name ee_inertials:=^">
-      <xacro:unless value="${name in ee_inertials}">${xacro.warning('No inertia properties defined for: ' + name)}</xacro:unless>
-      <xacro:if value="${name in ee_inertials}">
-        <!-- Access inertia properties of link 'name' -->
-        <xacro:property name="link_inertials" value="${ee_inertials[name]}" lazy_eval="false" />
-        <inertial>
-          <origin rpy="${link_inertials.origin.rpy}" xyz="${link_inertials.origin.xyz}" />
-          <mass value="${link_inertials.mass}" />
-          <xacro:if value="${'inertia' in link_inertials}">
-            <xacro:property name="I" value="${link_inertials.inertia}" />
-            <inertia ixx="${I.xx}" ixy="${I.xy}" ixz="${I.xz}" iyy="${I.yy}" iyz="${I.yz}" izz="${I.zz}" />
-          </xacro:if>
-        </inertial>
-      </xacro:if>
+    <xacro:unless value="${name in ee_inertials}">
+      ${xacro.warning('No inertia properties defined for: ' + name)}
+    </xacro:unless>
+    <xacro:if value="${name in ee_inertials}">
+      <xacro:property name="link_inertials" value="${ee_inertials[name]}" lazy_eval="false" />
+      <!-- Extract origin -->
+      <xacro:property name="xyz" value="${link_inertials.origin.x} ${link_inertials.origin.y} ${link_inertials.origin.z}" />
+      <xacro:property name="rpy" value="${link_inertials.origin.roll} ${link_inertials.origin.pitch} ${link_inertials.origin.yaw}" />
+  
+      <inertial>
+        <origin xyz="${xyz}" rpy="${rpy}" />
+        <mass value="${link_inertials.mass}" />
+        <xacro:if value="${'inertia' in link_inertials}">
+          <xacro:property name="I" value="${link_inertials.inertia}" />
+          <inertia ixx="${I.xx}" ixy="${I.xy}" ixz="${I.xz}"
+                   iyy="${I.yy}" iyz="${I.yz}" izz="${I.zz}" />
+        </xacro:if>
+      </inertial>
+    </xacro:if>
   </xacro:macro>
-
+  
   <xacro:macro name="ee_link_with_sc" params="name prefix rpy:='0 0 0' ee_kinematics_link">
     <!-- sub-link defining detailed meshes for collision with environment -->
     <link name="${prefix}${name}">
