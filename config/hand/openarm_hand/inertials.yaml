@@ -17,7 +17,7 @@ hand:
 
 left_finger:
   origin:
-    x: 00064528
+    x: 0.0064528
     y: 0.017020
     z: 0.0219685
     roll: 0
@@ -34,7 +34,7 @@ left_finger:
 
 right_finger:
   origin:
-    x: 00064528
+    x: 0.0064528
     y: -0.017020
     z: 0.0219685
     roll: 0
@@ -66,3 +66,5 @@ right_finger:
 #     xz: 0
 #     yz: 0
 # right_finger: *finger
+
+
