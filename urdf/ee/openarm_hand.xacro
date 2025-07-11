@@ -81,6 +81,5 @@
       <mimic joint="${ee_prefix}finger_joint1" />
     </joint>
 
-
   </xacro:macro>
 </robot>

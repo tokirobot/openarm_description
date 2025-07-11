@@ -111,13 +111,13 @@
       <xacro:openarm-limits name="joint6" config="${joint_limits}" />
     </joint>
 
-    <xacro:link_with_sc no_prefix="${no_prefix}" name="link7" rpy="0 0 0"  kinematics_link="${kinematics_link}" reflect="${reflect}"/>
+    <xacro:link_with_sc no_prefix="${no_prefix}" name="link7" kinematics_link="${kinematics_link}" reflect="${reflect}"/>
 
     <joint name="${prefix}joint7" type="revolute">
       <xacro:openarm-kinematics name="joint7" config="${kinematics}" />
       <parent link="${prefix}link6"/>
       <child link="${prefix}link7"/>
-      <axis xyz="0 1 0"/>
+      <axis xyz="0 -1 0"/>
       <xacro:openarm-limits name="joint7" config="${joint_limits}" />
     </joint>
 

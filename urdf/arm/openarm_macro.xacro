@@ -149,12 +149,10 @@
         <role>tip</role>
         <hardwareInterface>openarm_hw/openarmModelInterface</hardwareInterface>
       </joint>
-
       <actuator name="${root}_motor_root"><hardwareInterface>openarm_hw/openarmModelInterface</hardwareInterface></actuator>
       <actuator name="${tip}_motor_tip"  ><hardwareInterface>openarm_hw/openarmModelInterface</hardwareInterface></actuator>
     </transmission>
   </xacro:macro>
-
   <xacro:macro name="inertia-cylinder" params="mass radius h">
     <inertial>
       <mass value="${mass}" />
