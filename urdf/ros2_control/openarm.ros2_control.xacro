@@ -3,18 +3,15 @@
 
 <xacro:macro name="openarm_arm_ros2_control"
          params="arm_type
-             can
+             can_interface
              use_fake_hardware:=^|false
              fake_sensor_commands:=^|false
-             gazebo:=^|false
              hand:=^|false
              gazebo_effort:=^|false
              arm_prefix:=''
              bimanual:=false">
-             
-    <xacro:property name="arm_prefix_modified" value="${'' if arm_prefix == '' else arm_prefix + '_'}" />
 
-    <ros2_control name="${arm_prefix_modified}openarmHardwareInterface" type="system">
+    <ros2_control name="${arm_prefix}openarmHardwareInterface" type="system">
         <hardware>
           <param name="arm_type">${arm_type}</param>
           <param name="prefix">${arm_prefix}</param>
@@ -23,19 +20,14 @@
             <param name="fake_sensor_commands">${fake_sensor_commands}</param>
             <param name="state_following_offset">0.0</param>
           </xacro:if>
-
-          <xacro:if value="${gazebo}">
-            <plugin>openarm_ign_ros2_control/IgnitionSystem</plugin>
-          </xacro:if>
-
-          <xacro:if value="${use_fake_hardware == 0 and gazebo == 0 and bimanual == 0}">
-            <plugin>openarm_hardware/openarmHardwareInterface</plugin>
-            <param name="can">${can}</param>
+          <xacro:if value="${use_fake_hardware == 0 and bimanual == 0}">
+            <plugin>openarm_hardware/OpenArmHW</plugin>
+            <param name="can_interface">${can_interface}</param>
             <param name="arm_prefix">${arm_prefix}</param>
           </xacro:if>
-          <xacro:if value="${use_fake_hardware == 0 and gazebo == 0 and bimanual == 1}">
-            <plugin>openarm_hardware/MultiopenarmHardwareInterface</plugin>
-            <param name="can">${can}</param>
+          <xacro:if value="${use_fake_hardware == 0 and bimanual == 1}">
+            <plugin>openarm_hardware/OpenArmHW</plugin>
+            <param name="can_interface">${can_interface}</param>
             <param name="arm_prefix">${arm_prefix}</param>
           </xacro:if>
         </hardware>
@@ -50,9 +42,6 @@
           <xacro:if value="${bimanual == 0}">
             <command_interface name="position"/>
             <command_interface name="velocity"/>
-          </xacro:if>
-          
-          <xacro:if value="${gazebo == 0 or gazebo_effort == 1}">
             <command_interface name="effort"/>
           </xacro:if>
 
@@ -68,30 +57,24 @@
           <state_interface name="effort">
             <param name="initial_value">0.0</param>
           </state_interface>
-          
+
         </joint>
       </xacro:macro>
 
-      <xacro:configure_joint joint_name="${arm_prefix_modified}${arm_type}_joint1" initial_position="0.0"/>
-      <xacro:configure_joint joint_name="${arm_prefix_modified}${arm_type}_joint2" initial_position="0.0"/>
-      <xacro:configure_joint joint_name="${arm_prefix_modified}${arm_type}_joint3" initial_position="0.0"/>
-      <xacro:configure_joint joint_name="${arm_prefix_modified}${arm_type}_joint4" initial_position="0.0"/>
-      <xacro:configure_joint joint_name="${arm_prefix_modified}${arm_type}_joint5" initial_position="0.0"/>
-      <xacro:configure_joint joint_name="${arm_prefix_modified}${arm_type}_joint6" initial_position="0.0"/>
-      <xacro:configure_joint joint_name="${arm_prefix_modified}${arm_type}_joint7" initial_position="0.0"/>
-      <xacro:if value="${gazebo and hand}">
+      <xacro:configure_joint joint_name="openarm_${arm_prefix}joint1" initial_position="0.0"/>
+      <xacro:configure_joint joint_name="openarm_${arm_prefix}joint2" initial_position="0.0"/>
+      <xacro:configure_joint joint_name="openarm_${arm_prefix}joint3" initial_position="0.0"/>
+      <xacro:configure_joint joint_name="openarm_${arm_prefix}joint4" initial_position="0.0"/>
+      <xacro:configure_joint joint_name="openarm_${arm_prefix}joint5" initial_position="0.0"/>
+      <xacro:configure_joint joint_name="openarm_${arm_prefix}joint6" initial_position="0.0"/>
+      <xacro:configure_joint joint_name="openarm_${arm_prefix}joint7" initial_position="0.0"/>
+      <joint name="openarm_${arm_prefix}joint8" />
+
+      <xacro:if value="${hand}">
         <xacro:configure_joint joint_name="${arm_type}_finger_joint1" initial_position="0.0" />
       </xacro:if>
 
     </ros2_control>
-
-    <xacro:if value="${gazebo}">
-      <gazebo>
-        <plugin filename="openarm_ign_ros2_control-system" name="ign_ros2_control::IgnitionROS2ControlPlugin">
-          <parameters>$(find openarm_gazebo_bringup)/config/openarm_gazebo_controllers.yaml</parameters>
-        </plugin>
-      </gazebo>
-    </xacro:if>
 
   </xacro:macro>
 </robot>
