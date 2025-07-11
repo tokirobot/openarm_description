@@ -18,7 +18,7 @@
             hand:='false'
             ee_type:=''
             ros2_control:=false
-            can:=''
+            can_interface:=''
             use_fake_hardware:=false
             fake_sensor_commands:=false
             no_prefix:='false'
@@ -35,8 +35,8 @@
 
     <xacro:include filename="$(find openarm_description)/urdf/arm/openarm_macro.xacro" />
     <xacro:include filename="$(find openarm_description)/urdf/arm/openarm_arm.xacro" />
-    <xacro:include filename="$(find openarm_description)/urdf/body/openarm_body_macro.xacro" />  
-    <xacro:include filename="$(find openarm_description)/urdf/body/openarm_body.xacro" />  
+    <xacro:include filename="$(find openarm_description)/urdf/body/openarm_body_macro.xacro" />
+    <xacro:include filename="$(find openarm_description)/urdf/body/openarm_body.xacro" />
     <xacro:include filename="$(find openarm_description)/urdf/ee/openarm_hand.xacro" />
     <xacro:include filename="$(find openarm_description)/urdf/ee/openarm_hand_macro.xacro" />
     <xacro:include filename="$(find openarm_description)/urdf/ros2_control/openarm.ros2_control.xacro" />
@@ -49,7 +49,7 @@
 
     <xacro:if value="${bimanual}">
 
-        <xacro:openarm_body 
+        <xacro:openarm_body
         body_type="${body_type}"
         body_prefix="${body_prefix_modified}"
         no_prefix="${no_prefix}"
@@ -62,7 +62,7 @@
         kinematics_link="${body_kinematics_link}" />
 
         <!-- left arm -->
-        <xacro:openarm_arm 
+        <xacro:openarm_arm
         arm_type="${arm_type}"
         arm_prefix="left_"
         no_prefix="false"
@@ -80,7 +80,7 @@
         <xacro:openarm_arm_ros2_control
         arm_type="${arm_type}"
         arm_prefix="left_"
-        can="can1"
+        can_interface="can1"
         use_fake_hardware="${use_fake_hardware}"
         fake_sensor_commands="${fake_sensor_commands}"
         hand="${hand}"
@@ -89,7 +89,7 @@
        </xacro:if>
 
         <!-- right arm -->
-        <xacro:openarm_arm 
+        <xacro:openarm_arm
         arm_type="${arm_type}"
         arm_prefix="right_"
         no_prefix="false"
@@ -107,7 +107,7 @@
             <xacro:openarm_arm_ros2_control
             arm_type="${arm_type}"
             arm_prefix="right_"
-            can="can0"
+            can_interface="can0"
             use_fake_hardware="${use_fake_hardware}"
             fake_sensor_commands="${fake_sensor_commands}"
             hand="${hand}"
@@ -145,7 +145,7 @@
     </xacro:if>
 
     <xacro:if value="${not bimanual}">
-        
+
         <xacro:openarm_arm
         arm_type="${arm_type}"
         arm_prefix="${arm_prefix_modified}"
@@ -164,7 +164,7 @@
         <xacro:openarm_arm_ros2_control
             arm_type="${arm_type}"
             arm_prefix="${arm_prefix_modified}"
-            can="${can}"
+            can_interface="${can_interface}"
             use_fake_hardware="${use_fake_hardware}"
             fake_sensor_commands="${fake_sensor_commands}"
             hand="${hand}"
