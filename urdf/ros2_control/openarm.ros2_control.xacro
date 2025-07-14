@@ -71,7 +71,7 @@
       <joint name="openarm_${arm_prefix}joint8" />
 
       <xacro:if value="${hand}">
-        <xacro:configure_joint joint_name="${arm_type}_finger_joint1" initial_position="0.0" />
+        <xacro:configure_joint joint_name="openarm_${arm_prefix}finger_joint1" initial_position="0.0" />
       </xacro:if>
 
     </ros2_control>
