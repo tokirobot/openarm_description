@@ -3,8 +3,8 @@
 
 <xacro:macro name="openarm_bimanual_ros2_control"
          params="arm_type
-             left_can_interface
-             right_can_interface
+             left_can_interface:=^|can1
+             right_can_interface:=^|can0
              use_fake_hardware:=^|false
              fake_sensor_commands:=^|false
              hand:=^|false

@@ -36,6 +36,8 @@
   <xacro:arg name="can_interface" default="can0" />
   <xacro:arg name="left_can_interface" default="can1" />
   <xacro:arg name="right_can_interface" default="can0" />
+  <xacro:arg name="left_arm_prefix" default="left_" />
+  <xacro:arg name="right_arm_prefix" default="right_" />
   <!-- Should a fake hardware be used? -->
   <xacro:arg name="use_fake_hardware" default="false" />
   <!-- Should fake sensors be used? -->
@@ -69,6 +71,10 @@
   ee_type="$(arg ee_type)"
   ros2_control="$(arg ros2_control)"
   can_interface="$(arg can_interface)"
+  left_can_interface="$(arg left_can_interface)"
+  right_can_interface="$(arg right_can_interface)"
+  left_arm_prefix="$(arg left_arm_prefix)"
+  right_arm_prefix="$(arg right_arm_prefix)"
   use_fake_hardware="$(arg use_fake_hardware)"
   fake_sensor_commands="$(arg fake_sensor_commands)"
   no_prefix="$(arg no_prefix)"

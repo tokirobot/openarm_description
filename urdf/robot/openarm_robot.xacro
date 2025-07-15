@@ -30,7 +30,12 @@
             right_arm_base_xyz='0 0 0'
             left_arm_base_xyz='0 0 0'
             right_arm_base_rpy='0 0 0'
-            left_arm_base_rpy='0 0 0' "
+            left_arm_base_rpy='0 0 0'
+            left_can_interface:='can1'
+            right_can_interface:='can0'
+            left_arm_prefix:='left_'
+            right_arm_prefix:='right_'
+            "
             >
 
     <xacro:include filename="$(find openarm_description)/urdf/arm/openarm_macro.xacro" />
@@ -96,12 +101,12 @@
         <xacro:if value="${ros2_control}">
             <xacro:openarm_bimanual_ros2_control
             arm_type="${arm_type}"
-            left_can_interface="can1"
-            right_can_interface="can0"
+            left_can_interface="${left_can_interface}"
+            right_can_interface="${right_can_interface}"
             use_fake_hardware="${use_fake_hardware}"
             fake_sensor_commands="${fake_sensor_commands}"
-            left_arm_prefix="left_"
-            right_arm_prefix="right_"
+            left_arm_prefix="${left_arm_prefix}"
+            right_arm_prefix="${right_arm_prefix}"
             hand="${hand}"/>
         </xacro:if>
 
