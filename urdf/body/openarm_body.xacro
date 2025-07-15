@@ -16,7 +16,8 @@
               kinematics
               kinematics_link">
 
-    <xacro:property name="prefix" value="${'' if no_prefix else body_prefix + body_type + '_body_'}" />
+    <!-- <xacro:property name="prefix" value="${'' if no_prefix else body_prefix + 'body_'}" /> -->
+    <xacro:property name="prefix" value="${'' if no_prefix else 'openarm_' + 'body_'}" />
 
     <xacro:unless value="${not connected_to}">
     <link name="${connected_to}" />

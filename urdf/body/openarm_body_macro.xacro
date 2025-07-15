@@ -34,7 +34,8 @@
   <!-- self_collision_geometries:  self <collision> models        -->
   <!-- ========================================================== -->
   <xacro:macro name="body_link_with_sc" params="name no_prefix:='false' rpy:='0 0 0' kinematics_link">
-    <xacro:property name="prefix" value="${'' if no_prefix else body_prefix + body_type + '_'}" />
+    <!-- <xacro:property name="prefix" value="${'' if no_prefix else body_prefix + body_type + '_'}" /> -->
+    <xacro:property name="prefix" value="${'' if no_prefix else 'openarm' + '_' + body_prefix}" /> 
     <link name="${prefix}${name}">
       <visual name="${prefix}${name}_visual">
         <xacro:openarm-body-kinematics config="${kinematics_link}" name="${name}" />
