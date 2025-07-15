@@ -54,6 +54,26 @@ def robot_state_publisher_spawner(context: LaunchContext, arm_type, ee_type, bim
     ]
 
 
+def rviz_spawner(context: LaunchContext, bimanual):
+    bimanual_str = context.perform_substitution(bimanual)
+    
+    rviz_config_file = "bimanual.rviz" if bimanual_str.lower() == "true" else "arm_only.rviz"
+    rviz_config_path = os.path.join(
+        get_package_share_directory("openarm_description"),
+        "rviz", rviz_config_file
+    )
+    
+    return [
+        Node(
+            package="rviz2",
+            executable="rviz2",
+            name="rviz2",
+            arguments=["--display-config", rviz_config_path],
+            output="screen"
+        ),
+    ]
+
+
 def generate_launch_description():
     arm_type_arg = DeclareLaunchArgument(
         "arm_type",
@@ -81,9 +101,9 @@ def generate_launch_description():
         args=[arm_type, ee_type, bimanual]
     )
 
-    rviz_config_path = os.path.join(
-        get_package_share_directory("openarm_description"),
-        "rviz", "robot_description.rviz"
+    rviz_loader = OpaqueFunction(
+        function=rviz_spawner,
+        args=[bimanual]
     )
 
     return LaunchDescription([
@@ -96,11 +116,5 @@ def generate_launch_description():
             executable="joint_state_publisher_gui",
             name="joint_state_publisher_gui"
         ),
-        Node(
-            package="rviz2",
-            executable="rviz2",
-            name="rviz2",
-            arguments=["--display-config", rviz_config_path],
-            output="screen"
-        ),
+        rviz_loader,
     ])
