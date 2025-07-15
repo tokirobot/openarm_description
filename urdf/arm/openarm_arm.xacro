@@ -47,7 +47,7 @@
       <parent link="${prefix}link0" />
       <child link="${prefix}link1" />
       <axis xyz="0 0 1" />
-      <xacro:openarm-limits name="joint1" config="${joint_limits}" />
+      <xacro:openarm-limits name="joint1" config="${joint_limits}" offset="${-2.094396 if arm_prefix=='left_' else 0}"/>
     </joint>
 
     <!-- for bimanual offset -->
