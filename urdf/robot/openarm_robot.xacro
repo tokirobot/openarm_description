@@ -40,6 +40,7 @@
     <xacro:include filename="$(find openarm_description)/urdf/ee/openarm_hand.xacro" />
     <xacro:include filename="$(find openarm_description)/urdf/ee/openarm_hand_macro.xacro" />
     <xacro:include filename="$(find openarm_description)/urdf/ros2_control/openarm.ros2_control.xacro" />
+    <xacro:include filename="$(find openarm_description)/urdf/ros2_control/openarm.bimanual.ros2_control.xacro" />
     <xacro:if value="${ee_type != 'none'}">
         <xacro:include filename="$(find openarm_description)/urdf/ee/${ee_type}_arguments.xacro" />
     </xacro:if>
@@ -76,18 +77,6 @@
         kinematics_link="${kinematics_link}"
         kinematics_offset="${kinematics_offset}" />
 
-        <xacro:if value="${ros2_control}">
-        <xacro:openarm_arm_ros2_control
-        arm_type="${arm_type}"
-        arm_prefix="left_"
-        can_interface="can1"
-        use_fake_hardware="${use_fake_hardware}"
-        fake_sensor_commands="${fake_sensor_commands}"
-        hand="${hand}"
-        bimanual="true"
-        />
-       </xacro:if>
-
         <!-- right arm -->
         <xacro:openarm_arm
         arm_type="${arm_type}"
@@ -103,15 +92,17 @@
         kinematics_link="${kinematics_link}"
         kinematics_offset="${kinematics_offset}" />
 
+        <!-- ros2_control hardware interfaces for bimanual setup -->
         <xacro:if value="${ros2_control}">
-            <xacro:openarm_arm_ros2_control
+            <xacro:openarm_bimanual_ros2_control
             arm_type="${arm_type}"
-            arm_prefix="right_"
-            can_interface="can0"
+            left_can_interface="can1"
+            right_can_interface="can0"
             use_fake_hardware="${use_fake_hardware}"
             fake_sensor_commands="${fake_sensor_commands}"
-            hand="${hand}"
-            bimanual="true"/>
+            left_arm_prefix="left_"
+            right_arm_prefix="right_"
+            hand="${hand}"/>
         </xacro:if>
 
         <xacro:if value="$(eval hand and ee_type == 'openarm_hand')">
