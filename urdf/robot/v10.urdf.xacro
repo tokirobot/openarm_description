@@ -3,27 +3,18 @@
 
   <xacro:include filename="$(find openarm_description)/urdf/robot/openarm_robot.xacro"/>
 
-  <!--
-    DEPRECATION NOTICE
-    argument arm_type is no longer supported and will be removed in the future.
-    This argument is ignored.
-  -->
-
   <xacro:arg name="arm_type" default="v10" />
   <xacro:arg name="body_type" default="v10" />
   <xacro:arg name="ee_type" default="openarm_hand" />
 
-  <!-- Don't print a prefix for joints, visuals, and links? -->
   <xacro:arg name="no_prefix" default="false"/>
 
-  <!-- Should an end-effector be mounted at the flange?" -->
   <xacro:arg name="hand" default="true" />
 
   <xacro:if value="$(eval ee_type == 'none')">
     <xacro:property name="hand" value="false"/>
   </xacro:if>
 
-  <!-- If `gazebo` arg is set, to which frame shall $(arm_type)_link0 be parented. Empty string for not fixing at all -->
   <xacro:arg name="parent" default="world" />
   <!-- If `gazebo` arg is set and `parent` not empty, what position offset between `parent` & $(arm_type)_link0 -->
   <xacro:arg name="xyz" default="0 0 0" />
@@ -42,9 +33,6 @@
   <xacro:arg name="use_fake_hardware" default="false" />
   <!-- Should fake sensors be used? -->
   <xacro:arg name="fake_sensor_commands" default="false" />
-  <!-- Should the robot be spawned in Gazebo with effort interfaces?" -->
-  <!-- <xacro:arg name="gazebo_effort" default="false" /> -->
-
   <!-- For a multi arm setup, we need a threaded robot running async-->
   <xacro:arg name="bimanual" default="false" />
 
@@ -88,6 +76,5 @@
   right_arm_base_rpy="$(arg right_arm_base_rpy)"
   left_arm_base_rpy="$(arg left_arm_base_rpy)"
   />
-
 
 </robot>
