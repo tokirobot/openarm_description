@@ -21,6 +21,5 @@ ros2 launch openarm_description display_openarm.launch.py arm_type:=v10 bimanual
 Or to generate a URDF:
 ```sh
 URDF_NAME=openarm_bimanual.urdf
-cd ~/ros2_ws/src/openarm_description/urdf/robot
-xacro v10.urdf.xacro arm_type:=v10 bimanual:=true > $URDF_NAME
+xacro ~/ros2_ws/src/openarm_description/urdf/robot/v10.urdf.xacro arm_type:=v10 bimanual:=true > $URDF_NAME
 ```
