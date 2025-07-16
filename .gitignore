@@ -4,3 +4,5 @@ log/
 CMakeFiles/
 
 CMakeCache.txt
+*.urdf
+    
