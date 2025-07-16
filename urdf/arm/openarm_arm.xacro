@@ -23,9 +23,9 @@
       </joint>
     </xacro:unless>
 
-    <xacro:link_with_sc no_prefix="${no_prefix}" name="link0" kinematics_link="${kinematics_link}" reflect="${reflect}"/>
+    <xacro:link_with_sc no_prefix="${no_prefix}" name="link0" kinematics_link="${kinematics_link}" inertials="${inertials}" reflect="${reflect}"/>
 
-    <xacro:link_with_sc no_prefix="${no_prefix}" name="link1" kinematics_link="${kinematics_link}" reflect="${reflect}"/>
+    <xacro:link_with_sc no_prefix="${no_prefix}" name="link1" kinematics_link="${kinematics_link}" inertials="${inertials}" reflect="${reflect}"/>
 
     <joint name="${prefix}joint1" type="revolute">
       <xacro:openarm-kinematics name="joint1" config="${kinematics}" reflect="${reflect}"/>
@@ -36,7 +36,7 @@
     </joint>
 
     <!-- for bimanual offset -->
-    <xacro:link_with_sc no_prefix="${no_prefix}" name="link2" kinematics_link="${kinematics_link}" reflect="${reflect}"/>
+    <xacro:link_with_sc no_prefix="${no_prefix}" name="link2" kinematics_link="${kinematics_link}" inertials="${inertials}" reflect="${reflect}"/>
 
     <xacro:property name="limit_offset_joint2" value="0" />
 
@@ -56,7 +56,7 @@
       <xacro:openarm-limits name="joint2" config="${joint_limits}" reflect="${reflect}" offset="${limit_offset_joint2}"/>
     </joint>
     
-    <xacro:link_with_sc no_prefix="${no_prefix}" name="link3" kinematics_link="${kinematics_link}" reflect="${reflect}"/>
+    <xacro:link_with_sc no_prefix="${no_prefix}" name="link3" kinematics_link="${kinematics_link}" inertials="${inertials}" reflect="${reflect}"/>
 
     <joint name="${prefix}joint3" type="revolute">
       <xacro:openarm-kinematics name="joint3" config="${kinematics}" />
@@ -76,7 +76,7 @@
       <xacro:openarm-limits name="joint4" config="${joint_limits}" />
     </joint>
 
-    <xacro:link_with_sc no_prefix="${no_prefix}" name="link5" kinematics_link="${kinematics_link}" reflect="${reflect}" />
+    <xacro:link_with_sc no_prefix="${no_prefix}" name="link5" kinematics_link="${kinematics_link}" inertials="${inertials}" reflect="${reflect}" />
 
     <joint name="${prefix}joint5" type="revolute">
       <xacro:openarm-kinematics name="joint5" config="${kinematics}" />
@@ -86,7 +86,7 @@
       <xacro:openarm-limits name="joint5" config="${joint_limits}" />
     </joint>
 
-    <xacro:link_with_sc no_prefix="${no_prefix}" name="link6" kinematics_link="${kinematics_link}" reflect="${reflect}"/>
+    <xacro:link_with_sc no_prefix="${no_prefix}" name="link6" kinematics_link="${kinematics_link}" inertials="${inertials}" reflect="${reflect}"/>
 
     <joint name="${prefix}joint6" type="revolute">
       <xacro:openarm-kinematics name="joint6" config="${kinematics}" />
@@ -96,7 +96,7 @@
       <xacro:openarm-limits name="joint6" config="${joint_limits}" />
     </joint>
 
-    <xacro:link_with_sc no_prefix="${no_prefix}" name="link7" kinematics_link="${kinematics_link}" reflect="${reflect}"/>
+    <xacro:link_with_sc no_prefix="${no_prefix}" name="link7" kinematics_link="${kinematics_link}" inertials="${inertials}" reflect="${reflect}"/>
 
     <joint name="${prefix}joint7" type="revolute">
       <xacro:openarm-kinematics name="joint7" config="${kinematics}" />

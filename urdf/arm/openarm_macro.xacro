@@ -38,7 +38,7 @@
           <!-- <mesh filename="package://openarm_description/meshes/arm/${arm_type}/collision/${name}.stl" scale="0.001 0.001 0.001" /> -->
         </geometry>
       </collision>
-      <xacro:openarm-inertials name="${name}" />
+      <xacro:openarm-inertials name="${name}" inertials="${inertials}" reflect="${reflect}" />
     </link>
   </xacro:macro>
   
