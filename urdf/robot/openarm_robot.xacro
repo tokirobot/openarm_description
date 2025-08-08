@@ -112,7 +112,7 @@
 
         <xacro:if value="$(eval hand and ee_type == 'openarm_hand')">
             <xacro:openarm_hand
-                connected_to="openarm_left_link8"
+                connected_to="openarm_left_link7"
                 arm_type="${arm_type}"
                 arm_prefix="left_"
                 ee_type="${ee_type}"
@@ -125,7 +125,7 @@
                 description_pkg="$(arg description_pkg)"
             />
             <xacro:openarm_hand
-                connected_to="openarm_right_link8"
+                connected_to="openarm_right_link7"
                 arm_type="${arm_type}"
                 arm_prefix="right_"
                 ee_type="${ee_type}"
@@ -170,8 +170,8 @@
         <xacro:if value="${hand and ee_type == 'openarm_hand'}">
 
         <xacro:property name="special_connection" value="$(arg special_connection)" />
-        <!-- <xacro:property name="connection" value="${special_connection if special_connection != '' else arm_type + '_link8'}" /> -->
-        <xacro:property name="connection" value="${special_connection if special_connection != '' else 'openarm' + '_link8'}" />
+        <!-- <xacro:property name="connection" value="${special_connection if special_connection != '' else arm_type + '_link7'}" /> -->
+        <xacro:property name="connection" value="${special_connection if special_connection != '' else 'openarm' + '_link7'}" />
 
         <xacro:if value="$(eval hand and ee_type == 'openarm_hand')">
         <xacro:openarm_hand

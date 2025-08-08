@@ -5,7 +5,7 @@
   <xacro:arg name="special_connection" default="" />
 
   <!-- Position offset between ee and parent frame -->
-  <xacro:arg name="xyz_ee" default="0 -0.0235 0.1001" />
+  <xacro:arg name="xyz_ee" default="0 -0.0 0.1001" />
 
   <!-- Rotation offset between ee and parent frame -->
   <xacro:arg name="rpy_ee" default= "0 0 0" />
