@@ -1,4 +1,4 @@
-# Copyright 2025 Reazon Holdings, Inc.
+# Copyright 2025 Enactic, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -29,14 +29,7 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-install(DIRECTORY 
-launch
-meshes 
-rviz 
-urdf 
-# worlds 
-config
-DESTINATION share/${PROJECT_NAME}
-)
+install(DIRECTORY launch meshes rviz urdf config
+        DESTINATION share/${PROJECT_NAME})
 
 ament_package()
