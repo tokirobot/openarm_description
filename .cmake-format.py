@@ -12,4 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-*.urdf
+with section("format"):
+    command_case = "lower"
+
+with section("markup"):
+    enable_markup = False

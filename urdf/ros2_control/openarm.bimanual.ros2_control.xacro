@@ -56,7 +56,6 @@
           <state_interface name="effort">
             <param name="initial_value">0.0</param>
           </state_interface>
-
         </joint>
       </xacro:macro>
 
@@ -89,6 +88,5 @@
     </ros2_control>
 
   </xacro:macro>
-
 
 </robot>

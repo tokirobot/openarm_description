@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <!--
-　Copyright 2025 Reazon Holdings, Inc.
+　Copyright 2025 Enactic, Inc.
 
 　Licensed under the Apache License, Version 2.0 (the "License");
 　you may not use this file except in compliance with the License.
@@ -17,9 +17,9 @@
 -->
 <package format="3">
   <name>openarm_description</name>
-  <version>0.3.0</version>
+  <version>1.0.0</version>
   <description>URDF with optional configuration parameters for OpenArm</description>
-  <maintainer email="yusuke_toki@reazon.jp">Yusuke Toki</maintainer>
+  <maintainer email="openarm_dev@enactic.ai">Enactic, Inc.</maintainer>
   <license>Apache-2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
