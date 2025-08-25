@@ -106,13 +106,13 @@
       <xacro:openarm-limits name="joint7" config="${joint_limits}" />
     </joint>
 
-    <link name="${prefix}link8"/>
+    <!-- <link name="${prefix}link8"/>
 
     <joint name="${prefix}joint8" type="fixed">
       <xacro:openarm-kinematics name="joint8" config="${kinematics}" />
       <parent link="${prefix}link7" />
       <child link="${prefix}link8" />
-    </joint>
+    </joint> -->
 
   </xacro:macro>
 </robot>
