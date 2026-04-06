@@ -43,7 +43,7 @@
     <xacro:if value="${prefix.find('right_') != -1}">
       <xacro:property name="limit_offset_joint2" value="${pi/2}" />
     </xacro:if>
-    
+
     <xacro:if value="${prefix.find('left_') != -1}">
       <xacro:property name="limit_offset_joint2" value="${-pi/2}" />
     </xacro:if>
@@ -55,7 +55,7 @@
       <axis xyz="-1 0 0" />
       <xacro:openarm-limits name="joint2" config="${joint_limits}" reflect="${reflect}" offset="${limit_offset_joint2}"/>
     </joint>
-    
+
     <xacro:link_with_sc no_prefix="${no_prefix}" name="link3" kinematics_link="${kinematics_link}" inertials="${inertials}" reflect="${reflect}"/>
 
     <joint name="${prefix}joint3" type="revolute">
@@ -79,7 +79,7 @@
     <xacro:link_with_sc no_prefix="${no_prefix}" name="link5" kinematics_link="${kinematics_link}" inertials="${inertials}" reflect="${reflect}" />
 
     <joint name="${prefix}joint5" type="revolute">
-      <xacro:openarm-kinematics name="joint5" config="${kinematics}" />
+      <xacro:openarm-kinematics name="joint5" config="${kinematics}" reflect="${reflect}"/>
       <parent link="${prefix}link4" />
       <child link="${prefix}link5" />
       <axis xyz="0 0 1" />

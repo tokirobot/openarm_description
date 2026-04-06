@@ -31,7 +31,7 @@ def robot_state_publisher_spawner(context: LaunchContext, arm_type, ee_type, bim
 
     xacro_path = os.path.join(
         get_package_share_directory("openarm_description"),
-        "urdf", "robot", f"{arm_type_str}.urdf.xacro"
+        "urdf", "robot", f"{arm_type_str}", f"{arm_type_str}.urdf.xacro"
     )
 
     robot_description = xacro.process_file(
