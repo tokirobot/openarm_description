@@ -1,0 +1,16 @@
+links:
+  canonical_to_original:
+    base_link: ee_base_link
+    link1: finger_inner
+    link2: finger_outter
+  original_to_canonical:
+    ee_base_link: base_link
+    finger_inner: link1
+    finger_outter: link2
+joints:
+  canonical_to_original:
+    joint1: finger_inner_joint
+    joint2: finger_outter_joint
+  original_to_canonical:
+    finger_inner_joint: joint1
+    finger_outter_joint: joint2

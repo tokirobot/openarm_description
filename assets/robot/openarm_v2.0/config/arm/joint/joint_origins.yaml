@@ -1,0 +1,56 @@
+joint1:
+  origin:
+    x: 0
+    y: -0.0625
+    z: 0
+    roll: 0
+    pitch: -0
+    yaw: 0
+joint2:
+  origin:
+    x: 0
+    y: -0.0600000000000001
+    z: 0
+    roll: 0
+    pitch: -0
+    yaw: 0
+joint3:
+  origin:
+    x: 0
+    y: 0
+    z: -0.06625000000000079
+    roll: 0
+    pitch: -0
+    yaw: 0
+joint4:
+  origin:
+    x: 0
+    y: 0
+    z: -0.15375
+    roll: 0
+    pitch: -0
+    yaw: 0
+joint5:
+  origin:
+    x: 0
+    y: 0
+    z: -0.0955000000000005
+    roll: 0
+    pitch: -0
+    yaw: 0
+joint6:
+  origin:
+    x: 0
+    y: 0
+    z: -0.120499999999998
+    roll: 0
+    pitch: -0
+    yaw: 0
+joint7:
+  origin:
+    x: 0
+    y: 0
+    z: 0
+    roll: 0
+    pitch: -0
+    yaw: 0

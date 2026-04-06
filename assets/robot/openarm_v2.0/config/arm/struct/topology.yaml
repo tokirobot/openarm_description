@@ -1,0 +1,38 @@
+links:
+  - base_link
+  - link1
+  - link2
+  - link3
+  - link4
+  - link5
+  - link6
+  - link7
+joints:
+  joint1:
+    type: revolute
+    parent: base_link
+    child: link1
+  joint2:
+    type: revolute
+    parent: link1
+    child: link2
+  joint3:
+    type: revolute
+    parent: link2
+    child: link3
+  joint4:
+    type: revolute
+    parent: link3
+    child: link4
+  joint5:
+    type: revolute
+    parent: link4
+    child: link5
+  joint6:
+    type: revolute
+    parent: link5
+    child: link6
+  joint7:
+    type: revolute
+    parent: link6
+    child: link7

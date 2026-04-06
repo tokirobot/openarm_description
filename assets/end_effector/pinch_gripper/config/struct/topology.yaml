@@ -1,0 +1,13 @@
+links:
+  - base_link
+  - link1
+  - link2
+joints:
+  joint1:
+    type: revolute
+    parent: base_link
+    child: link1
+  joint2:
+    type: revolute
+    parent: base_link
+    child: link2

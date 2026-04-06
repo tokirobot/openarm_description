@@ -1,0 +1,426 @@
+# Repair records
+
+repair_unit: link5_obj_repair_000
+reason: skip_closed_mesh
+parent_key: __root__
+source_objects: 1
+  - node33
+
+repair_unit: link5_obj_repair_001
+reason: skip_closed_mesh
+parent_key: __root__
+source_objects: 1
+  - node34
+
+repair_unit: link5_obj_repair_002
+reason: skip_closed_mesh
+parent_key: __root__
+source_objects: 1
+  - node35
+
+repair_unit: link5_obj_repair_003
+reason: skip_closed_mesh
+parent_key: __root__
+source_objects: 1
+  - node36
+
+repair_unit: link5_obj_repair_004
+reason: skip_closed_mesh
+parent_key: __root__
+source_objects: 1
+  - node37
+
+repair_unit: link5_obj_repair_005
+reason: skip_closed_mesh
+parent_key: __root__
+source_objects: 1
+  - node38
+
+repair_unit: link5_obj_repair_006
+reason: skip_closed_mesh
+parent_key: __root__
+source_objects: 1
+  - node39
+
+repair_unit: link5_obj_repair_007
+reason: skip_closed_mesh
+parent_key: __root__
+source_objects: 1
+  - node40
+
+repair_unit: link5_obj_repair_008
+reason: skip_closed_mesh
+parent_key: __root__
+source_objects: 1
+  - node41
+
+repair_unit: link5_obj_repair_009
+reason: skip_closed_mesh
+parent_key: __root__
+source_objects: 1
+  - node42
+
+repair_unit: link5_obj_repair_010
+reason: skip_closed_mesh
+parent_key: __root__
+source_objects: 1
+  - node43
+
+repair_unit: link5_obj_repair_011
+reason: skip_closed_mesh
+parent_key: __root__
+source_objects: 1
+  - node44
+
+repair_unit: link5_obj_repair_012
+reason: skip_closed_mesh
+parent_key: __root__
+source_objects: 1
+  - node45
+
+repair_unit: link5_obj_repair_013
+reason: skip_closed_mesh
+parent_key: __root__
+source_objects: 1
+  - node46
+
+repair_unit: link5_obj_repair_014
+reason: skip_closed_mesh
+parent_key: __root__
+source_objects: 1
+  - node47
+
+repair_unit: link5_obj_repair_015
+reason: skip_closed_mesh
+parent_key: __root__
+source_objects: 1
+  - node48
+
+repair_unit: link5_obj_repair_016
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node0
+
+repair_unit: link5_obj_repair_017
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node1
+
+repair_unit: link5_obj_repair_018
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node2
+
+repair_unit: link5_obj_repair_019
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node3
+
+repair_unit: link5_obj_repair_020
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node4
+
+repair_unit: link5_obj_repair_021
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node5
+
+repair_unit: link5_obj_repair_022
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node6
+
+repair_unit: link5_obj_repair_023
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node7
+
+repair_unit: link5_obj_repair_024
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node8
+
+repair_unit: link5_obj_repair_025
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node9
+
+repair_unit: link5_obj_repair_026
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node10
+
+repair_unit: link5_obj_repair_027
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node11
+
+repair_unit: link5_obj_repair_028
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node12
+
+repair_unit: link5_obj_repair_029
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node13
+
+repair_unit: link5_obj_repair_030
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node14
+
+repair_unit: link5_obj_repair_031
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node15
+
+repair_unit: link5_obj_repair_032
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node16
+
+repair_unit: link5_obj_repair_033
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node17
+
+repair_unit: link5_obj_repair_034
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node18
+
+repair_unit: link5_obj_repair_035
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node19
+
+repair_unit: link5_obj_repair_036
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node20
+
+repair_unit: link5_obj_repair_037
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node21
+
+repair_unit: link5_obj_repair_038
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node22
+
+repair_unit: link5_obj_repair_039
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node23
+
+repair_unit: link5_obj_repair_040
+reason: aggregate_open_line_contact
+parent_key: __root__
+weld_distance: 1e-05
+welded_vertices: 5758
+source_objects: 2
+  - node24
+  - node25
+
+repair_unit: link5_obj_repair_041
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node26
+
+repair_unit: link5_obj_repair_042
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node27
+
+repair_unit: link5_obj_repair_043
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node28
+
+repair_unit: link5_obj_repair_044
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node29
+
+repair_unit: link5_obj_repair_045
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node30
+
+repair_unit: link5_obj_repair_046
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node31
+
+repair_unit: link5_obj_repair_047
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node32
+
+repair_unit: link5_obj_repair_048
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node49
+
+repair_unit: link5_obj_repair_049
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node50
+
+repair_unit: link5_obj_repair_050
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node51
+
+repair_unit: link5_obj_repair_051
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node52
+
+repair_unit: link5_obj_repair_052
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node53
+
+repair_unit: link5_obj_repair_053
+reason: single_open_no_contact
+parent_key: __root__
+weld_distance: 0
+welded_vertices: 0
+source_objects: 1
+  - node54
+
+
+# Color cluster records
+
+color_unit: link5_00
+rgba: 0.501961 0.501961 0.501961 1.000000
+repair_units: 2
+  - link5_obj_repair_040
+  - link5_obj_repair_042
+
+color_unit: link5_01
+rgba: 0.866667 0.909804 1.000000 1.000000
+repair_units: 1
+  - link5_obj_repair_041
+
+color_unit: link5_02
+rgba: 1.000000 0.949020 0.909804 1.000000
+repair_units: 5
+  - link5_obj_repair_043
+  - link5_obj_repair_044
+  - link5_obj_repair_045
+  - link5_obj_repair_046
+  - link5_obj_repair_047
+

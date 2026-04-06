@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:include filename="$(find openarm_description)/assets/robot/openarm_v1.0/urdf/ee/parallel_link/openarm_parallel_gripper.xacro" />
+
+  <xacro:macro name="openarm_ee" params="ee_type connected_to arm_type arm_prefix ee_kinematics ee_kinematics_link ee_inertials ee_joints_limits rpy_ee:='0 0 0' xyz_ee:='0 0 0' tcp_xyz:='0 0 0' tcp_rpy:='0 0 0' description_pkg:=openarm_description">
+    <xacro:if value="${ee_type == 'parallel_link'}">
+      <xacro:openarm_parallel_gripper
+        connected_to="${connected_to}"
+        arm_type="${arm_type}"
+        arm_prefix="${arm_prefix}"
+        ee_type="${ee_type}"
+        ee_kinematics="${ee_kinematics}"
+        ee_kinematics_link="${ee_kinematics_link}"
+        ee_inertials="${ee_inertials}"
+        ee_joints_limits="${ee_joints_limits}"
+      />
+    </xacro:if>
+    <xacro:unless value="${ee_type == 'parallel_link'}">
+      ${xacro.error('assets/robot/openarm_v1.0 only supports ee_type:=parallel_link.')}
+    </xacro:unless>
+  </xacro:macro>
+</robot>

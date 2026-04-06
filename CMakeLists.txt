@@ -29,7 +29,10 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-install(DIRECTORY launch meshes rviz urdf config
-        DESTINATION share/${PROJECT_NAME})
+foreach(asset_dir assets docs launch rviz scripts)
+  if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/${asset_dir}")
+    install(DIRECTORY ${asset_dir} DESTINATION share/${PROJECT_NAME})
+  endif()
+endforeach()
 
 ament_package()

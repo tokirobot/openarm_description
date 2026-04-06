@@ -1,0 +1,36 @@
+links:
+  canonical_to_original:
+    base_link: base_link
+    link1: link1
+    link2: link2
+    link3: link3
+    link4: link4
+    link5: link5
+    link6: link6
+    link7: empty_link_for_J7
+  original_to_canonical:
+    base_link: base_link
+    link1: link1
+    link2: link2
+    link3: link3
+    link4: link4
+    link5: link5
+    link6: link6
+    empty_link_for_J7: link7
+joints:
+  canonical_to_original:
+    joint1: joint1
+    joint2: joint2
+    joint3: joint3
+    joint4: joint4
+    joint5: joint5
+    joint6: joint6
+    joint7: joint7
+  original_to_canonical:
+    joint1: joint1
+    joint2: joint2
+    joint3: joint3
+    joint4: joint4
+    joint5: joint5
+    joint6: joint6
+    joint7: joint7

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="openarm_v20">
+
+  <xacro:include filename="$(find openarm_description)/assets/robot/openarm_v2.0/urdf/utils/openarm_v20_robot.xacro" />
+
+  <xacro:include filename="$(find openarm_description)/assets/robot/openarm_v2.0/urdf/ros2_control/openarm.bimanual.ros2_control.xacro" />
+
+  <xacro:arg name="robot_preset" default="default_bimanual" />
+  <xacro:arg name="collapse_internal_empty_links" default="true" />
+  <xacro:arg name="emit_grasp_frame" default="false" />
+
+  <xacro:arg name="use_fake_hardware" default="true" />
+
+  <xacro:property name="robot_root" value="$(find openarm_description)/assets/robot/openarm_v2.0" />
+  <xacro:property name="config_root" value="${robot_root + '/config'}" />
+  <xacro:property name="robot_preset_cfg" value="${xacro.load_yaml(config_root + '/robot_presets/' + '$(arg robot_preset)' + '.yaml')}" />
+
+  <xacro:openarm_v20_robot
+    config_root="${config_root}"
+    robot_preset="${robot_preset_cfg}"
+    collapse_internal_empty_links="$(arg collapse_internal_empty_links)"
+    emit_grasp_frame="$(arg emit_grasp_frame)" />
+
+  <xacro:property name="gains_file" value="${config_root}/arm/control/control_gains.yaml" />
+  <xacro:property name="gains_dict" value="${xacro.load_yaml(gains_file)}" />
+
+  <xacro:openarm_bimanual_ros2_control
+    arm_type="v20"
+    control_gains="${gains_dict}"
+    use_fake_hardware="$(arg use_fake_hardware)"
+    ee_type="pinch_gripper"
+    left_arm_prefix="left_"
+    right_arm_prefix="right_" />
+
+</robot>

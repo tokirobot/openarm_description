@@ -1,0 +1,98 @@
+base_link:
+  origin:
+    x: 0
+    y: 0
+    z: 0
+    roll: 0
+    pitch: -0
+    yaw: 0
+  geometry:
+    mesh: "package://openarm_description/assets/robot/openarm_v2.0/meshes/arm/collision/base_link.stl"
+    scale:
+      x: 1
+      y: 1
+      z: 1
+link1:
+  origin:
+    x: 0
+    y: 0
+    z: 0
+    roll: 0
+    pitch: -0
+    yaw: 0
+  geometry:
+    mesh: "package://openarm_description/assets/robot/openarm_v2.0/meshes/arm/collision/link1.stl"
+    scale:
+      x: 1
+      y: 1
+      z: 1
+link2:
+  origin:
+    x: 0
+    y: 0
+    z: 0
+    roll: 0
+    pitch: -0
+    yaw: 0
+  geometry:
+    mesh: "package://openarm_description/assets/robot/openarm_v2.0/meshes/arm/collision/link2.stl"
+    scale:
+      x: 1
+      y: 1
+      z: 1
+link3:
+  origin:
+    x: 0
+    y: 0
+    z: 0
+    roll: 0
+    pitch: -0
+    yaw: 0
+  geometry:
+    mesh: "package://openarm_description/assets/robot/openarm_v2.0/meshes/arm/collision/link3.stl"
+    scale:
+      x: 1
+      y: 1
+      z: 1
+link4:
+  origin:
+    x: 0
+    y: 0
+    z: 0
+    roll: 0
+    pitch: -0
+    yaw: 0
+  geometry:
+    mesh: "package://openarm_description/assets/robot/openarm_v2.0/meshes/arm/collision/link4.stl"
+    scale:
+      x: 1
+      y: 1
+      z: 1
+link5:
+  origin:
+    x: 0
+    y: 0
+    z: 0
+    roll: 0
+    pitch: -0
+    yaw: 0
+  geometry:
+    mesh: "package://openarm_description/assets/robot/openarm_v2.0/meshes/arm/collision/link5.stl"
+    scale:
+      x: 1
+      y: 1
+      z: 1
+link6:
+  origin:
+    x: 0
+    y: 0
+    z: 0
+    roll: 0
+    pitch: -0
+    yaw: 0
+  geometry:
+    mesh: "package://openarm_description/assets/robot/openarm_v2.0/meshes/arm/collision/link6.stl"
+    scale:
+      x: 1
+      y: 1
+      z: 1

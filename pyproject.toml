@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openarm_description"
+version = "0.1.0"
+authors = [{name = "Enactic, Inc."}]
+description = "URDF and Assets for OpenArm"
+license = {text = "Apache-2.0"}
+maintainers = [{name = "Enactic, Inc."}]
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.setuptools]
+packages = ["assets"]
+
+[tool.setuptools.package-data]
+"assets" = ["**/*"]

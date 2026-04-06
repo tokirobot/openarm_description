@@ -1,0 +1,17 @@
+<mujoco model="link5_obj">
+  <asset>
+    <mesh name="link5_00" file="link5_00.obj"/>
+    <mesh name="link5_01" file="link5_01.obj"/>
+    <mesh name="link5_02" file="link5_02.obj"/>
+    <material name="link5_00_mat" rgba="0.501961 0.501961 0.501961 1.000000"/>
+    <material name="link5_01_mat" rgba="0.866667 0.909804 1.000000 1.000000"/>
+    <material name="link5_02_mat" rgba="1.000000 0.949020 0.909804 1.000000"/>
+  </asset>
+  <worldbody>
+    <body name="link5_obj">
+      <geom type="mesh" mesh="link5_00" material="link5_00_mat" contype="0" conaffinity="0" group="1"/>
+      <geom type="mesh" mesh="link5_01" material="link5_01_mat" contype="0" conaffinity="0" group="1"/>
+      <geom type="mesh" mesh="link5_02" material="link5_02_mat" contype="0" conaffinity="0" group="1"/>
+    </body>
+  </worldbody>
+</mujoco>

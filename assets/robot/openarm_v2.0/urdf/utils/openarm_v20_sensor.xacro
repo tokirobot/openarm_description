@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find openarm_description)/assets/sensor/zed/urdf_wrapper/openarm_zed_wrapper.xacro" />
+
+  <xacro:macro name="openarm_v20_sensor"
+    params="product config connected_to mount_origin prefix:=''">
+
+    <xacro:if value="${product == 'zed'}">
+      <xacro:openarm_zed_wrapper
+        config="${config}"
+        connected_to="${connected_to}"
+        mount_origin="${mount_origin}"
+        prefix="${prefix}" />
+    </xacro:if>
+  </xacro:macro>
+
+</robot>

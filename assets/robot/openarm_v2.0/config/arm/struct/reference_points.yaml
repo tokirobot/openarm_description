@@ -1,0 +1,21 @@
+ee_mount_point:
+  parent: link7
+  origin:
+    x: 0.0205
+    y: 0
+    z: 0
+    roll: 0
+    pitch: -0
+    yaw: 0
+  meta:
+    kind: assembly_mount
+    source_joint:
+      original_name: ee_mount_joint
+      canonical_name: null
+      type: fixed
+    parent_link:
+      original_name: empty_link_for_J7
+      canonical_name: link7
+    child_link:
+      original_name: empty_link_for_ee_mounting
+      canonical_name: null

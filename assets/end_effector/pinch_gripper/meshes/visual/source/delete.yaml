@@ -1,0 +1,15 @@
+ee_base_link:
+  - ee_base_link_obj_repair_000
+  - ee_base_link_obj_repair_026
+  - ee_base_link_obj_repair_027
+  - ee_base_link_obj_repair_028
+  - ee_base_link_obj_repair_029
+
+
+
+finger_inner:
+  - finger_inner_obj_repair_010
+  - finger_inner_obj_repair_014
+
+finger_outter:
+  - finger_outter_obj_repair_010

@@ -1,0 +1,129 @@
+robot:
+  root_frame: world
+  components:
+    - body
+    - head_zed
+    - primary_arm
+    - secondary_arm
+    - primary_arm_end_effector
+    - secondary_arm_end_effector
+
+body:
+  type: robot
+  enabled: true
+  product: openarm_v2.0
+  config: body
+  inertials: nominal
+  link_name: openarm_body_link0
+  connection:
+    parent: world
+    origin:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      roll: 0.0
+      pitch: 0.0
+      yaw: 0.0
+  reflect:
+    x: 1
+    y: 1
+    z: 1
+  limit_override_joints: {}
+
+head_zed:
+  type: sensor
+  enabled: true
+  product: zed
+  config:
+    camera_name: openarm_head_zed
+    camera_model: zedm
+    custom_baseline: 0.0
+    enable_gnss: false
+  prefix: openarm_head_
+  connection:
+    attach_to: body
+    parent_reference_point: zed_front_mount_point
+    parent: null
+    origin: null
+  reflect:
+    x: 1
+    y: 1
+    z: 1
+
+primary_arm:
+  type: robot
+  enabled: true
+  product: openarm_v2.0
+  config: arm
+  inertials: nominal
+  prefix: openarm_left_
+  connection:
+    attach_to: body
+    parent_reference_point: left_arm_mount_point
+    parent: null
+    origin: null
+  reflect:
+    x: 1
+    y: -1
+    z: 1
+    include:
+      links: [base_link, link1, link2, link5, link6, link7]
+      joints: [joint1, joint2, joint3, joint5, joint6, joint7]
+      reference_points: [ee_mount_point]
+  limit_override_joints: {}
+
+secondary_arm:
+  type: robot
+  enabled: true
+  product: openarm_v2.0
+  config: arm
+  inertials: nominal
+  prefix: openarm_right_
+  connection:
+    attach_to: body
+    parent_reference_point: right_arm_mount_point
+    parent: null
+    origin: null
+  reflect:
+    x: 1
+    y: 1
+    z: 1
+  limit_override_joints: {}
+
+primary_arm_end_effector:
+  type: end_effector
+  enabled: true
+  product: pinch_gripper
+  config: null
+  inertials: nominal
+  prefix: openarm_left_
+  connection:
+    attach_to: primary_arm
+    parent_reference_point: ee_mount_point
+    parent: null
+    origin: null
+  reflect:
+    x: 1
+    y: -1
+    z: 1
+  limit_override_joints: {}
+  swap_fingers: true
+
+secondary_arm_end_effector:
+  type: end_effector
+  enabled: true
+  product: pinch_gripper
+  config: null
+  inertials: nominal
+  prefix: openarm_right_
+  connection:
+    attach_to: secondary_arm
+    parent_reference_point: ee_mount_point
+    parent: null
+    origin: null
+  reflect:
+    x: 1
+    y: 1
+    z: 1
+  limit_override_joints: {}
+  swap_fingers: false

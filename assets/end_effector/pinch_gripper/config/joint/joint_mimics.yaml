@@ -1,0 +1,4 @@
+joint2:
+  joint: joint1
+  multiplier: -1
+  offset: 0
