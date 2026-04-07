@@ -39,7 +39,7 @@
 
   <xacro:arg name="fake_sensor_commands" default="false" />
 
-  <xacro:arg name="bimanual" default="false" />
+  <xacro:arg name="bimanual" default="true" />
 
   <xacro:arg name="right_arm_base_xyz" default="0.0 -0.031 0.698" />
   <xacro:arg name="right_arm_base_rpy" default="1.5708 0 0" />

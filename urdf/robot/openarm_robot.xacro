@@ -43,11 +43,11 @@
 
     <xacro:include filename="$(find openarm_description)/urdf/arm/openarm_macro.xacro" />
     <xacro:include filename="$(find openarm_description)/urdf/arm/openarm_arm.xacro" />
+
     <xacro:include filename="$(find openarm_description)/urdf/body/openarm_body_macro.xacro" />
     <xacro:include filename="$(find openarm_description)/urdf/body/openarm_body.xacro" />
 
     <xacro:include filename="$(find openarm_description)/urdf/ee/ee_dispatcher.xacro" />
-
     <xacro:include filename="$(find openarm_description)/urdf/ee/openarm_hand_macro.xacro" />
 
     <xacro:include filename="$(find openarm_description)/urdf/ros2_control/openarm.ros2_control.xacro" />

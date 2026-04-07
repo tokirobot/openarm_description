@@ -77,18 +77,19 @@ def rviz_spawner(context: LaunchContext, bimanual):
 def generate_launch_description():
     arm_type_arg = DeclareLaunchArgument(
         "arm_type",
+        default_value="v20",
         description="Type of arm to visualize (e.g., v10)"
     )
 
     ee_type_arg = DeclareLaunchArgument(
         "ee_type",
-        default_value="none",
+        default_value="pinch_gripper",
         description="Type of end-effector to attach (e.g., openarm_hand or none)"
     )
 
     bimanual_arg = DeclareLaunchArgument(
         "bimanual",
-        default_value="false",
+        default_value="true",
         description="Whether to use bimanual configuration"
     )
 
