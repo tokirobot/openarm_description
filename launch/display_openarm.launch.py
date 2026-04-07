@@ -82,7 +82,7 @@ def generate_launch_description():
 
     ee_type_arg = DeclareLaunchArgument(
         "ee_type",
-        default_value="openarm_hand",
+        default_value="none",
         description="Type of end-effector to attach (e.g., openarm_hand or none)"
     )
 

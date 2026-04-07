@@ -7,7 +7,7 @@
 
   <xacro:arg name="body_type" default="v20" />
 
-  <xacro:arg name="ee_type" default="openarm_v20_hand" />
+  <xacro:arg name="ee_type" default="pinch_gripper" />
 
   <xacro:arg name="no_prefix" default="false"/>
 
@@ -61,7 +61,8 @@
   body_inertials="${xacro.load_yaml('$(find openarm_description)/config/body/v20/inertials.yaml')}"
   body_kinematics="${xacro.load_yaml('$(find openarm_description)/config/body/v20/kinematics.yaml')}"
   body_kinematics_link="${xacro.load_yaml('$(find openarm_description)/config/body/v20/kinematics_link.yaml')}"
-  ee_kinematics_link="${xacro.load_yaml('$(find openarm_description)/config/hand/openarm_hand/kinematics_link.yaml')}"
+  ee_kinematics_link="${xacro.load_yaml('$(find openarm_description)/config/hand/pinch_gripper/kinematics_link.yaml')}"
+  ee_inertials="${xacro.load_yaml('$(find openarm_description)/config/hand/pinch_gripper/inertials.yaml')}"
   hand="$(arg hand)"
   ee_type="$(arg ee_type)"
   ros2_control="$(arg ros2_control)"
