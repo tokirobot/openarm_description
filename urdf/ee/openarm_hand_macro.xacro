@@ -22,23 +22,23 @@
     </xacro:if>
   </xacro:macro>
 
-  <xacro:macro name="ee_link_with_sc" params="name prefix rpy:='0 0 0' ee_kinematics_link">
+  <xacro:macro name="ee_link_with_sc" params="name prefix rpy:='0 0 0' ee_kinematics_link reflect:=1">
     <link name="${prefix}${name}">
       <visual name="${prefix}${name}_visual">
         <xacro:openarm-ee-kinematics-link config="${ee_kinematics_link}" name="${name}" />
         <geometry>
-          <mesh filename="package://${description_pkg}/meshes/ee/${ee_type}/visual/${name}.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://${description_pkg}/meshes/ee/${ee_type}/visual/${name}.dae" scale="0.001 ${0.001*reflect} 0.001" />
         </geometry>
       </visual>
       <collision name="${prefix}${name}_collision">
         <xacro:openarm-ee-kinematics-link config="${ee_kinematics_link}" name="${name}" />
         <geometry>
-          <mesh filename="package://openarm_description/meshes/ee/${ee_type}/collision/${name}.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://openarm_description/meshes/ee/${ee_type}/collision/${name}.stl" scale="0.001 ${0.001*reflect} 0.001" />
         </geometry>
       </collision>
       <xacro:ee-inertials name="${name}" />
     </link>
-  </xacro:macro>
+</xacro:macro>
 
   <xacro:macro name="openarm-ee-kinematics" params="config name">
       <xacro:property name="kinematics" value="${config[name]['kinematic']}" lazy_eval="false" />
@@ -51,5 +51,30 @@
     <origin rpy="${kinematics_link.roll} ${kinematics_link.pitch} ${kinematics_link.yaw}"
             xyz="${kinematics_link.x} ${kinematics_link.y} ${kinematics_link.z}" />
   </xacro:macro>
+
+
+
+  <xacro:macro name="ee_finger_link_with_sc" params="name prefix ee_kinematics_link arm_reflect:=1 finger_reflect:=1">
+    <link name="${prefix}${name}">
+      <visual name="${prefix}${name}_visual">
+        <xacro:openarm-ee-kinematics-link config="${ee_kinematics_link}" name="${name}" />
+        <geometry>
+          <mesh filename="package://${description_pkg}/meshes/ee/${ee_type}/visual/finger.dae"
+                scale="${0.001*finger_reflect} ${0.001*arm_reflect} 0.001" />
+        </geometry>
+      </visual>
+      <collision name="${prefix}${name}_collision">
+        <xacro:openarm-ee-kinematics-link config="${ee_kinematics_link}" name="${name}" />
+        <geometry>
+          <mesh filename="package://openarm_description/meshes/ee/${ee_type}/collision/finger.stl"
+                scale="${0.001*finger_reflect} ${0.001*arm_reflect} 0.001" />
+        </geometry>
+      </collision>
+      <xacro:ee-inertials name="${name}" />
+    </link>
+</xacro:macro>
+
+
+
 
 </robot>
