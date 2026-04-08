@@ -24,9 +24,8 @@ from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
 
-def robot_state_publisher_spawner(context: LaunchContext, arm_type, ee_type, bimanual):
+def robot_state_publisher_spawner(context: LaunchContext, arm_type, bimanual):
     arm_type_str = context.perform_substitution(arm_type)
-    ee_type_str = context.perform_substitution(ee_type)
     bimanual_str = context.perform_substitution(bimanual)
 
     xacro_path = os.path.join(
@@ -38,7 +37,6 @@ def robot_state_publisher_spawner(context: LaunchContext, arm_type, ee_type, bim
         xacro_path,
         mappings={
             "arm_type": arm_type_str,
-            "ee_type": ee_type_str,
             "bimanual": bimanual_str,
         }
     ).toprettyxml(indent="  ")
@@ -81,12 +79,6 @@ def generate_launch_description():
         description="Type of arm to visualize (e.g., v10)"
     )
 
-    ee_type_arg = DeclareLaunchArgument(
-        "ee_type",
-        default_value="pinch_gripper",
-        description="Type of end-effector to attach (e.g., openarm_hand or none)"
-    )
-
     bimanual_arg = DeclareLaunchArgument(
         "bimanual",
         default_value="true",
@@ -94,12 +86,11 @@ def generate_launch_description():
     )
 
     arm_type = LaunchConfiguration("arm_type")
-    ee_type = LaunchConfiguration("ee_type")
     bimanual = LaunchConfiguration("bimanual")
 
     robot_state_publisher_loader = OpaqueFunction(
         function=robot_state_publisher_spawner,
-        args=[arm_type, ee_type, bimanual]
+        args=[arm_type, bimanual]
     )
 
     rviz_loader = OpaqueFunction(
@@ -109,7 +100,6 @@ def generate_launch_description():
 
     return LaunchDescription([
         arm_type_arg,
-        ee_type_arg,
         bimanual_arg,
         robot_state_publisher_loader,
         Node(

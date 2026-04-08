@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="hand">
-  <xacro:macro name="openarm_v20_hand" params="connected_to:='' arm_type arm_prefix:='' ee_type ee_inertials ee_kinematics_link rpy_ee:='0 0 0' xyz_ee:='0 0 0' tcp_xyz:='0 0 0' tcp_rpy:='0 0 0' description_pkg:=openarm_description">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="pinch_gripper"> <xacro:macro name="openarm_v20_pinch_gripper" params="connected_to:='' arm_type arm_prefix:='' ee_type ee_inertials ee_kinematics_link rpy_ee:='0 0 0' xyz_ee:='0 0 0' tcp_xyz:='0 0 0' tcp_rpy:='0 0 0' description_pkg:=openarm_description">
 
     <xacro:property name="ee_prefix" value=""/>
     <xacro:unless value="${arm_type == ''}">
@@ -9,27 +8,12 @@
 
     <xacro:property name="reflect" value="${-1 if arm_prefix == 'left_' else 1}" />
 
-    <!-- hand link -->
-    <xacro:ee_link_with_sc name="hand" prefix="${ee_prefix}" ee_kinematics_link="${ee_kinematics_link}" reflect="${reflect}"/>
-
-    <!-- hand joint -->
-    <xacro:unless value="${connected_to == ''}">
-      <joint name="${arm_prefix}openarm_hand_joint" type="fixed">
-        <parent link="${connected_to}" />
-        <child link="${ee_prefix}hand" />
-        <origin xyz="${xyz_ee}" rpy="${rpy_ee}" />
-      </joint>
-    </xacro:unless>
-
-    <!-- tcp frame -->
     <link name="${ee_prefix}hand_tcp" />
     <joint name="${ee_prefix}hand_tcp_joint" type="fixed">
       <origin xyz="${tcp_xyz}" rpy="${tcp_rpy}" />
-      <parent link="${ee_prefix}hand" />
-      <child link="${ee_prefix}hand_tcp" />
+      <parent link="${connected_to}" /> <child link="${ee_prefix}hand_tcp" />
     </joint>
 
-    <!-- finger links -->
     <xacro:ee_finger_link_with_sc
         name="right_finger"
         prefix="${ee_prefix}"
@@ -45,19 +29,15 @@
         finger_reflect="1"
     />
 
-    <!-- finger joints -->
     <joint name="${ee_prefix}finger_joint1" type="revolute">
-      <parent link="${ee_prefix}hand" />
-      <child link="${ee_prefix}right_finger" />
-      <origin xyz="0 0.006 0.015" rpy="0 0 0" />
-      <axis xyz="0 1 0" />
+      <parent link="${connected_to}" /> <child link="${ee_prefix}right_finger" />
+      <origin xyz="0 0.006 0.015" rpy="0 0 0" /> <axis xyz="0 1 0" />
       <limit effort="333" lower="0.0" upper="1.5708" velocity="10.0" />
     </joint>
+
     <joint name="${ee_prefix}finger_joint2" type="revolute">
-      <parent link="${ee_prefix}hand" />
-      <child link="${ee_prefix}left_finger" />
-      <origin xyz="0 -0.006 0.015" rpy="0 0 0" />
-      <axis xyz="0 -1 0" />
+      <parent link="${connected_to}" /> <child link="${ee_prefix}left_finger" />
+      <origin xyz="0 -0.006 0.015" rpy="0 0 0" /> <axis xyz="0 -1 0" />
       <limit effort="333" lower="0.0" upper="1.5708" velocity="10.0" />
       <mimic joint="${ee_prefix}finger_joint1" />
     </joint>

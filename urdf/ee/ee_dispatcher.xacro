@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <xacro:include filename="$(find openarm_description)/urdf/ee/parallel_link/openarm_hand.xacro" />
-  <xacro:include filename="$(find openarm_description)/urdf/ee/pinch_gripper/openarm_v20_hand.xacro" />
+  <xacro:include filename="$(find openarm_description)/urdf/ee/parallel_link/openarm_parallel_gripper.xacro" />
+  <xacro:include filename="$(find openarm_description)/urdf/ee/pinch_gripper/openarm_v20_pinch_gripper.xacro" />
 
   <xacro:macro name="openarm_ee" params="ee_type connected_to arm_type arm_prefix ee_kinematics_link ee_inertials">
     <xacro:if value="${ee_type == 'parallel_link'}">
-      <xacro:openarm_hand
+      <xacro:openarm_parallel_gripper
         connected_to="${connected_to}"
         arm_type="${arm_type}"
         arm_prefix="${arm_prefix}"
@@ -15,7 +15,7 @@
       />
     </xacro:if>
     <xacro:if value="${ee_type == 'pinch_gripper'}">
-      <xacro:openarm_v20_hand
+      <xacro:openarm_v20_pinch_gripper
         connected_to="${connected_to}"
         arm_type="${arm_type}"
         arm_prefix="${arm_prefix}"

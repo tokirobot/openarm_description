@@ -17,7 +17,6 @@
             parent:='world'
             xyz:='0 0 0'
             rpy:='0 0 0'
-            hand:='false'
             ee_type:=''
             ros2_control:=false
             can_interface:=''
@@ -48,7 +47,7 @@
     <xacro:include filename="$(find openarm_description)/urdf/body/openarm_body.xacro" />
 
     <xacro:include filename="$(find openarm_description)/urdf/ee/ee_dispatcher.xacro" />
-    <xacro:include filename="$(find openarm_description)/urdf/ee/openarm_hand_macro.xacro" />
+    <xacro:include filename="$(find openarm_description)/urdf/ee/openarm_ee_macro.xacro" />
 
     <xacro:include filename="$(find openarm_description)/urdf/ros2_control/openarm.ros2_control.xacro" />
     <xacro:include filename="$(find openarm_description)/urdf/ros2_control/openarm.bimanual.ros2_control.xacro" />
@@ -100,6 +99,23 @@
         kinematics_link="${kinematics_link}"
         kinematics_offset="${kinematics_offset}" />
 
+        <xacro:openarm_ee
+            connected_to="openarm_left_link7"
+            arm_type="${arm_type}"
+            arm_prefix="left_"
+            ee_type="${ee_type}"
+            ee_kinematics_link="${ee_kinematics_link}"
+            ee_inertials="${ee_inertials}"
+        />
+        <xacro:openarm_ee
+            connected_to="openarm_right_link7"
+            arm_type="${arm_type}"
+            arm_prefix="right_"
+            ee_type="${ee_type}"
+            ee_kinematics_link="${ee_kinematics_link}"
+            ee_inertials="${ee_inertials}"
+        />
+
         <!-- ros2_control hardware interfaces for bimanual setup -->
         <xacro:if value="${ros2_control}">
             <xacro:openarm_bimanual_ros2_control
@@ -111,72 +127,48 @@
             fake_sensor_commands="${fake_sensor_commands}"
             left_arm_prefix="${left_arm_prefix}"
             right_arm_prefix="${right_arm_prefix}"
-            hand="${hand}"/>
+            hand="true"/>
         </xacro:if>
-
-        <xacro:if value="${hand}">
-            <xacro:openarm_ee
-                connected_to="openarm_left_link7"
-                arm_type="${arm_type}"
-                arm_prefix="left_"
-                ee_type="${ee_type}"
-                ee_kinematics_link="${ee_kinematics_link}"
-                ee_inertials="${ee_inertials}"
-            />
-            <xacro:openarm_ee
-                connected_to="openarm_right_link7"
-                arm_type="${arm_type}"
-                arm_prefix="right_"
-                ee_type="${ee_type}"
-                ee_kinematics_link="${ee_kinematics_link}"
-                ee_inertials="${ee_inertials}"
-            />
-        </xacro:if>
-
     </xacro:if>
+
 
     <xacro:if value="${not bimanual}">
 
         <xacro:openarm_arm
-        arm_type="${arm_type}"
-        arm_prefix="${arm_prefix_modified}"
-        no_prefix="${no_prefix}"
-        xyz="${xyz}"
-        rpy="${rpy}"
-        joint_limits="${joint_limits}"
-        kinematics="${kinematics}"
-        kinematics_link="${kinematics_link}"
-        inertials="${inertials}"
-        connected_to=""
+            arm_type="${arm_type}"
+            arm_prefix="${arm_prefix_modified}"
+            no_prefix="${no_prefix}"
+            xyz="${xyz}"
+            rpy="${rpy}"
+            joint_limits="${joint_limits}"
+            kinematics="${kinematics}"
+            kinematics_link="${kinematics_link}"
+            inertials="${inertials}"
+            connected_to=""
+        />
+
+        <xacro:openarm_ee
+            connected_to="openarm_${arm_prefix_modified}link7" arm_type="${arm_type}"
+            arm_prefix="${arm_prefix_modified}"
+            ee_type="${ee_type}"
+            ee_kinematics_link="${ee_kinematics_link}"
+            ee_inertials="${ee_inertials}"
         />
 
         <xacro:if value="${ros2_control}">
-
-        <xacro:openarm_arm_ros2_control
-            arm_type="${arm_type}"
-            control_gains="${control_gains}"
-            arm_prefix="${arm_prefix_modified}"
-            can_interface="${can_interface}"
-            use_fake_hardware="${use_fake_hardware}"
-            fake_sensor_commands="${fake_sensor_commands}"
-            hand="${hand}"
-            bimanual="false"
-            can_fd="${can_fd}"/>
-        </xacro:if>
-
-        <xacro:if value="${hand}">
-            <xacro:openarm_ee
-                connected_to="openarm_link7"
+            <xacro:openarm_arm_ros2_control
                 arm_type="${arm_type}"
+                control_gains="${control_gains}"
                 arm_prefix="${arm_prefix_modified}"
-                ee_type="${ee_type}"
-                ee_kinematics_link="${ee_kinematics_link}"
-                ee_inertials="${ee_inertials}"
-            />
-        </xacro:if>
+                can_interface="${can_interface}"
+                use_fake_hardware="${use_fake_hardware}"
+                fake_sensor_commands="${fake_sensor_commands}"
+                hand="true"
+                can_fd="${can_fd}"/> </xacro:if>
+
+    </xacro:if>
 
 
-        </xacro:if>
 
   </xacro:macro>
 </robot>
