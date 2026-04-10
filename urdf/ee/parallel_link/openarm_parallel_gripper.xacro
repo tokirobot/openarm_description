@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="parallel_gripper">
 
-  <xacro:macro name="openarm_parallel_gripper" params="connected_to:='' arm_type arm_prefix:='' ee_type ee_inertials ee_kinematics ee_kinematics_link rpy_ee:='0 0 0' xyz_ee:='0 0 0' tcp_xyz:='0 0 0' tcp_rpy:='0 0 0' description_pkg:=openarm_description">
+  <xacro:macro name="openarm_parallel_gripper" params="connected_to:='' arm_type arm_prefix:='' ee_type ee_inertials ee_kinematics ee_kinematics_link ee_joints_limits rpy_ee:='0 0 0' xyz_ee:='0 0 0' tcp_xyz:='0 0 0' tcp_rpy:='0 0 0' description_pkg:=openarm_description">
 
     <xacro:property name="ee_prefix" default=""/>
 

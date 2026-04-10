@@ -9,6 +9,7 @@
              use_fake_hardware:=^|false
              fake_sensor_commands:=^|false
              hand:=^|false
+             ee_type:=^|parallel_link
              left_arm_prefix:=^|left_
              right_arm_prefix:=^|right_
              can_fd:=^|true">
@@ -23,11 +24,12 @@
             <param name="state_following_offset">0.0</param>
           </xacro:if>
           <xacro:unless value="${use_fake_hardware}">
-            <plugin>openarm_hardware/OpenArm_v10HW</plugin>
+            <plugin>openarm_hardware/OpenArmHW</plugin>
             <param name="can_interface">${left_can_interface}</param>
             <param name="arm_prefix">${left_arm_prefix}</param>
             <param name="hand">${hand}</param>
             <param name="can_fd">${can_fd}</param>
+            <param name="ee_type">${ee_type}</param>
             <param name="kp1">${control_gains['joint1']['kp']}</param>
             <param name="kp2">${control_gains['joint2']['kp']}</param>
             <param name="kp3">${control_gains['joint3']['kp']}</param>
@@ -88,7 +90,7 @@
             <param name="state_following_offset">0.0</param>
           </xacro:if>
           <xacro:unless value="${use_fake_hardware}">
-            <plugin>openarm_hardware/OpenArm_v10HW</plugin>
+            <plugin>openarm_hardware/OpenArmHW</plugin>
             <param name="can_interface">${right_can_interface}</param>
             <param name="arm_prefix">${right_arm_prefix}</param>
             <param name="hand">${hand}</param>

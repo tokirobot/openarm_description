@@ -15,6 +15,7 @@
             ee_kinematics
             ee_kinematics_link
             ee_inertials
+            ee_joints_limits
             parent:='world'
             xyz:='0 0 0'
             rpy:='0 0 0'
@@ -108,6 +109,7 @@
             ee_kinematics="${ee_kinematics}"
             ee_kinematics_link="${ee_kinematics_link}"
             ee_inertials="${ee_inertials}"
+            ee_joints_limits="${ee_joints_limits}"
         />
         <xacro:openarm_ee
             connected_to="openarm_right_link7"
@@ -117,6 +119,7 @@
             ee_kinematics="${ee_kinematics}"
             ee_kinematics_link="${ee_kinematics_link}"
             ee_inertials="${ee_inertials}"
+            ee_joints_limits="${ee_joints_limits}"
         />
 
         <!-- ros2_control hardware interfaces for bimanual setup -->
@@ -130,7 +133,8 @@
             fake_sensor_commands="${fake_sensor_commands}"
             left_arm_prefix="${left_arm_prefix}"
             right_arm_prefix="${right_arm_prefix}"
-            hand="true"/>
+            hand="true"
+            ee_type="${ee_type}"/>
         </xacro:if>
     </xacro:if>
 
@@ -157,6 +161,7 @@
             ee_kinematics="${ee_kinematics}"
             ee_kinematics_link="${ee_kinematics_link}"
             ee_inertials="${ee_inertials}"
+            ee_joints_limits="${ee_joints_limits}"
         />
 
         <xacro:if value="${ros2_control}">
@@ -168,7 +173,9 @@
                 use_fake_hardware="${use_fake_hardware}"
                 fake_sensor_commands="${fake_sensor_commands}"
                 hand="true"
-                can_fd="${can_fd}"/> </xacro:if>
+                can_fd="${can_fd}"
+                ee_type="${ee_type}"/>
+        </xacro:if>
 
     </xacro:if>
 
