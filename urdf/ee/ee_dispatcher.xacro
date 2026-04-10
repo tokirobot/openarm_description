@@ -3,13 +3,14 @@
   <xacro:include filename="$(find openarm_description)/urdf/ee/parallel_link/openarm_parallel_gripper.xacro" />
   <xacro:include filename="$(find openarm_description)/urdf/ee/pinch_gripper/openarm_v20_pinch_gripper.xacro" />
 
-  <xacro:macro name="openarm_ee" params="ee_type connected_to arm_type arm_prefix ee_kinematics_link ee_inertials">
+  <xacro:macro name="openarm_ee" params="ee_type connected_to arm_type arm_prefix ee_kinematics ee_kinematics_link ee_inertials">
     <xacro:if value="${ee_type == 'parallel_link'}">
       <xacro:openarm_parallel_gripper
         connected_to="${connected_to}"
         arm_type="${arm_type}"
         arm_prefix="${arm_prefix}"
         ee_type="${ee_type}"
+        ee_kinematics="${ee_kinematics}"
         ee_kinematics_link="${ee_kinematics_link}"
         ee_inertials="${ee_inertials}"
       />
@@ -20,6 +21,7 @@
         arm_type="${arm_type}"
         arm_prefix="${arm_prefix}"
         ee_type="${ee_type}"
+        ee_kinematics="${ee_kinematics}"
         ee_kinematics_link="${ee_kinematics_link}"
         ee_inertials="${ee_inertials}"
       />

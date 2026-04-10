@@ -37,8 +37,9 @@
   body_kinematics="${xacro.load_yaml('$(find openarm_description)/config/body/$(arg body_type)/kinematics.yaml')}"
   body_kinematics_link="${xacro.load_yaml('$(find openarm_description)/config/body/$(arg body_type)/kinematics.yaml')}"
 
-  ee_kinematics_link="${xacro.load_yaml('$(find openarm_description)/config/ee/' + auto_ee_type + '/kinematics_link.yaml')}"
   ee_inertials="${xacro.load_yaml('$(find openarm_description)/config/ee/' + auto_ee_type + '/inertials.yaml')}"
+  ee_kinematics="${xacro.load_yaml('$(find openarm_description)/config/ee/' + auto_ee_type + '/kinematics.yaml')}"
+  ee_kinematics_link="${xacro.load_yaml('$(find openarm_description)/config/ee/' + auto_ee_type + '/kinematics_link.yaml')}"
 
   ee_type="${auto_ee_type}" ros2_control="$(arg ros2_control)"
   can_interface="$(arg can_interface)"
