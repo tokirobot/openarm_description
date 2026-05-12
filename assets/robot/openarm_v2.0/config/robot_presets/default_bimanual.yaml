@@ -86,7 +86,6 @@ primary_arm_end_effector:
     y: -1
     z: 1
   limit_override_joints: {}
-  swap_fingers: true
 
 secondary_arm_end_effector:
   type: end_effector
@@ -105,4 +104,3 @@ secondary_arm_end_effector:
     y: 1
     z: 1
   limit_override_joints: {}
-  swap_fingers: false

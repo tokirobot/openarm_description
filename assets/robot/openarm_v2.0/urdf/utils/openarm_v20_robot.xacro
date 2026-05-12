@@ -276,7 +276,6 @@
     <xacro:property name="reflect_include_joints" value="${reflect_include_cfg['joints'] if 'joints' in reflect_include_cfg else list(component_desc['topology']['joints'].keys())}" lazy_eval="false" />
     <xacro:property name="reflect_include_reference_points" value="${reflect_include_cfg['reference_points'] if 'reference_points' in reflect_include_cfg else list(component_desc['reference_points'].keys())}" lazy_eval="false" />
     <xacro:property name="limit_override_joints" value="${component_cfg['limit_override_joints'] if 'limit_override_joints' in component_cfg else dict()}" lazy_eval="false" />
-    <xacro:property name="swap_fingers" value="${component_cfg['swap_fingers'] if 'swap_fingers' in component_cfg else False}" lazy_eval="false" />
     <xacro:property name="connection" value="${component_cfg['connection'] if 'connection' in component_cfg else dict()}" lazy_eval="false" />
     <xacro:property name="parent_component_name" value="${connection['attach_to'] if 'attach_to' in connection else none_value}" lazy_eval="false" />
     <xacro:property name="has_parent_desc" value="${parent_desc != none_value}" lazy_eval="false" />
@@ -396,7 +395,6 @@
                    reflect_include_joints=reflect_include_joints,
                    reflect_include_reference_points=reflect_include_reference_points,
                    limit_override_joints=limit_override_joints,
-                   swap_fingers=swap_fingers,
                    resolved_connected_to=resolved_connected_to,
                    resolved_mount_origin=resolved_mount_origin,
                    skip_mount_joint=skip_mount_joint,
@@ -479,7 +477,6 @@
         reflect_include_joints="${component_runtime['reflect_include_joints']}"
         reflect_include_reference_points="${component_runtime['reflect_include_reference_points']}"
         limit_override_joints="${component_runtime['limit_override_joints']}"
-        swap_fingers="${component_runtime['swap_fingers']}"
         emit_grasp_frame="${emit_grasp_frame}"
         skip_mount_joint="${component_runtime['skip_mount_joint']}"
         base_frame_shift="${component_runtime['base_frame_shift']}" />

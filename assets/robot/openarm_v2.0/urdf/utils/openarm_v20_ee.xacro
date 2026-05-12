@@ -5,7 +5,7 @@
 
   <!-- Current EE implementation targets the two-finger gripper topology. -->
   <xacro:macro name="openarm_v20_ee"
-    params="prefix connected_to mount_origin:=none topology joint_origins joint_axes joint_limits joint_mimics inertials visuals collisions reflect_x:=1 reflect_y:=1 reflect_z:=1 component_reflects:=false reflect_include_links:=^ reflect_include_joints:=^ reflect_include_reference_points:=^ limit_override_joints:=^ swap_fingers:=false ee_reference_points:=^ emit_grasp_frame:=false grasp_reference_point:=grasp_frame skip_mount_joint:=false base_frame_shift:=none">
+    params="prefix connected_to mount_origin:=none topology joint_origins joint_axes joint_limits joint_mimics inertials visuals collisions reflect_x:=1 reflect_y:=1 reflect_z:=1 component_reflects:=false reflect_include_links:=^ reflect_include_joints:=^ reflect_include_reference_points:=^ limit_override_joints:=^ ee_reference_points:=^ emit_grasp_frame:=false grasp_reference_point:=grasp_frame skip_mount_joint:=false base_frame_shift:=none">
 
     <xacro:property name="base_link_name" value="${topology['links'][0]}" />
     <xacro:property name="base_link_full_name" value="${prefix}ee_${base_link_name}" />
@@ -13,7 +13,7 @@
     <xacro:property name="resolved_base_frame_shift" value="${base_frame_shift if base_frame_shift != 'none' else dict(x=0.0, y=0.0, z=0.0, roll=0.0, pitch=0.0, yaw=0.0)}" lazy_eval="false" />
     <xacro:property name="use_base_frame_shift" value="${base_frame_shift != 'none'}" lazy_eval="false" />
     <xacro:property name="base_link_reflects" value="${component_reflects and base_link_name in reflect_include_links}" lazy_eval="false" />
-    <!-- Keep joint/link numbering semantic: finger1 is inner, finger2 is outter. -->
+    <!-- Finger numbering stays semantic; handedness is handled by reflect_* and the joint config. -->
     <xacro:property name="finger1_source" value="link1" />
     <xacro:property name="finger2_source" value="link2" />
     <xacro:property name="finger1_joint_source" value="joint1" />
@@ -136,11 +136,11 @@
     <xacro:property name="finger2_joint_limit_cfg" value="${joint_limits[finger2_joint_source]['limit']}" lazy_eval="false" />
     <xacro:property
       name="finger1_limit_should_mirror"
-      value="${finger1_joint_axis_reflect_sign &lt; 0}"
+      value="${finger1_joint_reflects}"
       lazy_eval="false" />
     <xacro:property
       name="finger2_limit_should_mirror"
-      value="${finger2_joint_axis_reflect_sign &lt; 0}"
+      value="${finger2_joint_reflects}"
       lazy_eval="false" />
     <xacro:property
       name="finger1_joint_limit_override"

@@ -15,7 +15,6 @@
   <xacro:arg name="reflect_x" default="1" />
   <xacro:arg name="reflect_y" default="1" />
   <xacro:arg name="reflect_z" default="1" />
-  <xacro:arg name="swap_fingers" default="false" />
   <xacro:arg name="emit_grasp_frame" default="false" />
 
   <xacro:property name="reflect_x_value" value="${float('$(arg reflect_x)')}" lazy_eval="false" />
@@ -53,7 +52,6 @@
     reflect_include_joints="${list(ee_topology['joints'].keys())}"
     reflect_include_reference_points="${list(ee_reference_points.keys())}"
     limit_override_joints="${dict()}"
-    swap_fingers="$(arg swap_fingers)"
     emit_grasp_frame="$(arg emit_grasp_frame)" />
 
 </robot>

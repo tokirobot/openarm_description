@@ -23,6 +23,9 @@
 
   <xacro:property name="gains_file" value="${config_root}/arm/control/control_gains.yaml" />
   <xacro:property name="gains_dict" value="${xacro.load_yaml(gains_file)}" />
+  <xacro:property name="pinch_mimics_file" value="$(find openarm_description)/assets/end_effector/pinch_gripper/config/joint/joint_mimics.yaml" />
+  <xacro:property name="pinch_mimics_dict" value="${xacro.load_yaml(pinch_mimics_file)}" />
+  <xacro:property name="pinch_finger_mimic_multiplier" value="${pinch_mimics_dict['joint2']['multiplier'] if 'joint2' in pinch_mimics_dict else 1.0}" />
 
   <xacro:openarm_bimanual_ros2_control
     arm_type="v20"
@@ -30,6 +33,8 @@
     use_fake_hardware="$(arg use_fake_hardware)"
     ee_type="pinch_gripper"
     left_arm_prefix="left_"
-    right_arm_prefix="right_" />
+    right_arm_prefix="right_"
+    left_finger_mimic_multiplier="${pinch_finger_mimic_multiplier}"
+    right_finger_mimic_multiplier="${pinch_finger_mimic_multiplier}" />
 
 </robot>

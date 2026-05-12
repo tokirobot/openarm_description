@@ -34,4 +34,4 @@ __pycache__
 *.egg-info/
 .venv/
 .agents/
-urdf/
+/urdf/
