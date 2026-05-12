@@ -12,26 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# *.urdf
-**/build/*
-/backup
-**/base_urdf_ws
-*.zip
-# .github
-.vscode
-.codex
-__pycache__
-# *.obj
-# *.dae
-# *.stl
-# *.mtl
-# *.txt
-# *.xml
-*.tsv
-**/processed/*
-**/review/*
-**/tmp/*
-*.egg-info/
-.venv/
-.agents/
-urdf/
+name: Feature Request
+description: Request a feature.
+type: Feature
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the feature you want
+      description: It's better that you also provide your use case.
+    validations:
+      required: true

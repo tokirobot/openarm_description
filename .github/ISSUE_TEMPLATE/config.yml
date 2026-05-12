@@ -12,26 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# *.urdf
-**/build/*
-/backup
-**/base_urdf_ws
-*.zip
-# .github
-.vscode
-.codex
-__pycache__
-# *.obj
-# *.dae
-# *.stl
-# *.mtl
-# *.txt
-# *.xml
-*.tsv
-**/processed/*
-**/review/*
-**/tmp/*
-*.egg-info/
-.venv/
-.agents/
-urdf/
+blank_issues_enabled: false
+contact_links:
+  - name: Discord
+    url: https://discord.gg/FsZaZ4z3We
+    about: Please ask and answer questions here.
+  - name: GitHub Discussions
+    url: https://github.com/enactic/openarm_description/discussions
+    about: If you prefer GitHub Discussions to Discord, you can use GitHub Discussions too.

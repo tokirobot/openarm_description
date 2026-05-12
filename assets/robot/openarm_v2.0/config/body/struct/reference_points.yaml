@@ -44,15 +44,15 @@ right_arm_mount_point:
 
 # Example body-mounted camera reference point. Tune this pose from CAD or
 # calibration before using it on hardware.
-zed_front_mount_point:
-  parent: body_link0
-  origin:
-    x: 0.12
-    y: 0.0
-    z: 0.82
-    roll: 0.0
-    pitch: 0.0
-    yaw: 0.0
-  meta:
-    kind: sensor_mount
-    sensor_family: zed
+# zed_front_mount_point:
+#   parent: body_link0
+#   origin:
+#     x: 0.12
+#     y: 0.0
+#     z: 0.82
+#     roll: 0.0
+#     pitch: 0.0
+#     yaw: 0.0
+#   meta:
+#     kind: sensor_mount
+#     sensor_family: zed
