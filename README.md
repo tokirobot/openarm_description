@@ -2,7 +2,7 @@
 
 This package contains description files to generate OpenArm URDFs (Universal Robot Description Files). See [documentation](https://docs.openarm.dev/software/description) for details.
 
-## Project Entry Points
+<!-- ## Project Entry Points
 
 Use one of these entry documents depending on what you are working on:
 
@@ -16,7 +16,7 @@ Use one of these entry documents depending on what you are working on:
 Recommended starting point:
 
 - for all new robot assembly, presets, xacro, and URDF generation work, start with `assets/robot/openarm_v2.0`
-- only use `assets/robot/openarm_v1.0` when you need the old `v10 + parallel_link` compatibility path
+- only use `assets/robot/openarm_v1.0` when you need the old `v10 + parallel_link` compatibility path -->
 
 ## Related links
 
