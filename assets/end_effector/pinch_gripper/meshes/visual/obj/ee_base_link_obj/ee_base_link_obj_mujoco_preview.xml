@@ -1,0 +1,20 @@
+<mujoco model="ee_base_link_obj">
+  <asset>
+    <mesh name="ee_base_link_00" file="ee_base_link_00.obj"/>
+    <mesh name="ee_base_link_01" file="ee_base_link_01.obj"/>
+    <mesh name="ee_base_link_02" file="ee_base_link_02.obj"/>
+    <mesh name="ee_base_link_03" file="ee_base_link_03.obj"/>
+    <material name="ee_base_link_00_mat" rgba="1.000000 0.949020 0.909804 1.000000"/>
+    <material name="ee_base_link_01_mat" rgba="0.501961 0.501961 0.501961 1.000000"/>
+    <material name="ee_base_link_02_mat" rgba="1.000000 1.000000 1.000000 1.000000"/>
+    <material name="ee_base_link_03_mat" rgba="0.866667 0.909804 1.000000 1.000000"/>
+  </asset>
+  <worldbody>
+    <body name="ee_base_link_obj">
+      <geom type="mesh" mesh="ee_base_link_00" material="ee_base_link_00_mat" contype="0" conaffinity="0" group="1"/>
+      <geom type="mesh" mesh="ee_base_link_01" material="ee_base_link_01_mat" contype="0" conaffinity="0" group="1"/>
+      <geom type="mesh" mesh="ee_base_link_02" material="ee_base_link_02_mat" contype="0" conaffinity="0" group="1"/>
+      <geom type="mesh" mesh="ee_base_link_03" material="ee_base_link_03_mat" contype="0" conaffinity="0" group="1"/>
+    </body>
+  </worldbody>
+</mujoco>
