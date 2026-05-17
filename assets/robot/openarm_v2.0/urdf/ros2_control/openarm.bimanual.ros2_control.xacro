@@ -76,14 +76,14 @@
 
       <xacro:configure_joint joint_name="openarm_${left_arm_prefix}finger_joint1" initial_position="0.0" />
 
-      <joint name="openarm_${left_arm_prefix}finger_joint2">
+      <!-- <joint name="openarm_${left_arm_prefix}finger_joint2">
         <param name="mimic">openarm_${left_arm_prefix}finger_joint1</param>
         <param name="multiplier">${left_finger_mimic_multiplier}</param>
         <command_interface name="position"/>
         <state_interface name="position">
           <param name="initial_value">0.0</param>
         </state_interface>
-      </joint>
+      </joint> -->
 
     </ros2_control>
 
@@ -127,14 +127,14 @@
 
       <xacro:configure_joint joint_name="openarm_${right_arm_prefix}finger_joint1" initial_position="0.0" />
 
-      <joint name="openarm_${right_arm_prefix}finger_joint2">
+      <!-- <joint name="openarm_${right_arm_prefix}finger_joint2">
         <param name="mimic">openarm_${right_arm_prefix}finger_joint1</param>
         <param name="multiplier">${right_finger_mimic_multiplier}</param>
         <command_interface name="position"/>
         <state_interface name="position">
           <param name="initial_value">0.0</param>
         </state_interface>
-      </joint>
+      </joint> -->
 
     </ros2_control>
 
