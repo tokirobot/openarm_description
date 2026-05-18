@@ -93,7 +93,8 @@ def generate_launch_description():
     grasp_frame_arg = DeclareLaunchArgument(
         "emit_grasp_frame", default_value="false")
     bimanual_arg = DeclareLaunchArgument("bimanual", default_value="true")
-    ros2_control_arg = DeclareLaunchArgument("ros2_control", default_value="false")
+    ros2_control_arg = DeclareLaunchArgument(
+        "ros2_control", default_value="false")
     use_fake_hardware_arg = DeclareLaunchArgument(
         "use_fake_hardware", default_value="false")
     fake_sensor_commands_arg = DeclareLaunchArgument(
