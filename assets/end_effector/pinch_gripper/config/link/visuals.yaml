@@ -35,7 +35,7 @@ link2:
     pitch: -0
     yaw: 0
   geometry:
-    mesh: "package://openarm_description/assets/end_effector/pinch_gripper/meshes/visual/finger_outter.dae"
+    mesh: "package://openarm_description/assets/end_effector/pinch_gripper/meshes/visual/finger_outer.dae"
     scale:
       x: 1
       y: 1

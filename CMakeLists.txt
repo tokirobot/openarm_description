@@ -29,9 +29,9 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-foreach(asset_dir assets docs launch rviz scripts)
-  if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/${asset_dir}")
-    install(DIRECTORY ${asset_dir} DESTINATION share/${PROJECT_NAME})
+foreach(install_dir assets launch rviz scripts)
+  if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/${install_dir}")
+    install(DIRECTORY ${install_dir} DESTINATION share/${PROJECT_NAME})
   endif()
 endforeach()
 

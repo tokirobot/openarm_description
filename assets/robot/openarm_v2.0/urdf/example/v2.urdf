@@ -289,7 +289,7 @@
     <visual name="openarm_left_ee_link2_visual">
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://openarm_description/assets/end_effector/pinch_gripper/meshes/visual/finger_outter.dae" scale="1 -1 1"/>
+        <mesh filename="package://openarm_description/assets/end_effector/pinch_gripper/meshes/visual/finger_outer.dae" scale="1 -1 1"/>
       </geometry>
       <material name="openarm_left_ee_link2_material">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/>
@@ -298,7 +298,7 @@
     <collision name="openarm_left_ee_link2_collision">
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://openarm_description/assets/end_effector/pinch_gripper/meshes/collision/finger_outter.stl" scale="1 -1 1"/>
+        <mesh filename="package://openarm_description/assets/end_effector/pinch_gripper/meshes/collision/finger_outer.stl" scale="1 -1 1"/>
       </geometry>
     </collision>
     <inertial>
@@ -579,7 +579,7 @@
     <visual name="openarm_right_ee_link2_visual">
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://openarm_description/assets/end_effector/pinch_gripper/meshes/visual/finger_outter.dae" scale="1 1 1"/>
+        <mesh filename="package://openarm_description/assets/end_effector/pinch_gripper/meshes/visual/finger_outer.dae" scale="1 1 1"/>
       </geometry>
       <material name="openarm_right_ee_link2_material">
         <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/>
@@ -588,7 +588,7 @@
     <collision name="openarm_right_ee_link2_collision">
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://openarm_description/assets/end_effector/pinch_gripper/meshes/collision/finger_outter.stl" scale="1 1 1"/>
+        <mesh filename="package://openarm_description/assets/end_effector/pinch_gripper/meshes/collision/finger_outer.stl" scale="1 1 1"/>
       </geometry>
     </collision>
     <inertial>
