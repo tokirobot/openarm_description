@@ -35,3 +35,5 @@ __pycache__
 .venv/
 .agents/
 /urdf/
+
+docs/
