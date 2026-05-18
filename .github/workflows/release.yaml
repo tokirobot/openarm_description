@@ -28,7 +28,7 @@ jobs:
           - "jazzy"
           - "humble"
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
       - name: Build URDF files
         run: |
           docker container run \
@@ -39,14 +39,22 @@ jobs:
               cd /source
               colcon build
               source install/setup.bash
-              for file in $(find urdf -name "*.xacro"); do
-                xacro "${file}" bimanual:=true > "${file%.*}_${{ matrix.id }}_bimanual.urdf"
-                xacro "${file}" bimanual:=false > "${file%.*}_${{ matrix.id }}.urdf"
-              done'
-      - uses: actions/upload-artifact@v7
+
+              mkdir -p urdf_output
+
+              # v1.0 bimanual
+              xacro assets/robot/openarm_v1.0/urdf/openarm_v10.urdf.xacro \
+                arm_type:=v10 bimanual:=true \
+                > urdf_output/openarm_v10_bimanual_${{ matrix.id }}.urdf
+
+              # v2.0 bimanual
+              xacro assets/robot/openarm_v2.0/urdf/openarm_v20.urdf.xacro \
+                robot_preset:=default_bimanual \
+                > urdf_output/openarm_v20_bimanual_${{ matrix.id }}.urdf'
+      - uses: actions/upload-artifact@v4
         with:
           name: urdf-${{ matrix.id }}
-          path: urdf/**/*.urdf
+          path: urdf_output/*.urdf
   publish:
     name: Publish
     needs: build
@@ -68,8 +76,8 @@ jobs:
           else
             echo "REF=${GITHUB_REF_NAME}" >> ${GITHUB_ENV}
           fi
-      - uses: actions/checkout@v6
-      - uses: actions/download-artifact@v8
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
         with:
           pattern: urdf-*
           path: artifacts
@@ -88,7 +96,7 @@ jobs:
 
           sha256sum "${name}.tar.gz" > "${name}.tar.gz.sha256"
           sha512sum "${name}.tar.gz" > "${name}.tar.gz.sha512"
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@v4
         with:
           name: source-archive
           path: openarm-description-*.tar.gz*
